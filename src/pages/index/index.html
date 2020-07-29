@@ -8,9 +8,63 @@
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+  <header>
+    <img src="<%=require('../../images/NewsAnalyzer.svg')%>" alt="NewsAnalyzer logo" class="logo">
+    <div class="">
+      <a class="" href="#">Главная</a>
+      <a class="" href="#">О проекте</a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h1>Что творится в мире?</h1>
+      <p>Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+      <form>
+        <input type="text" id="" name="" class="" placeholder="Введите тему новости">
+        <button>Искать</button>
+      </form>
+    </section>
+    <section>
+      <p>Слайдер</p>
+    </section>
+    <section>
+      <img src="<%=require('../../images/not-found.svg')%>" alt="Ничего не найдено" class="">
+      <p>Ничего не найдено</p>
+      <p>К сожалению по вашему запросу ничего не найдено.</p>
+    </section>
+    <section>
+      <h2>Результаты поиска</h2>
+      <a>Посмотреть аналитику &#8250;</a>
+      <div class="news-list">
+        <div class="news">
+          <img src="" alt="Картинка новости" class="">
+          <p>Дата</p>
+          <h3>Заголовок новости</h3>
+          <p>Текст новости</p>
+          <p>Источник новости</p>
+        </div>
+      </div>
+      <button>Показать ещё</button>
+      
+    </section>
+    <section>
+      <img src="" alt="Author" class="">
+      <h2>Об авторе</h2>
+      <p>Текст об авторе</p>
+    </section>
+  </main>
+  <footer>
+    <p class="footer__copyright">&copy; 2020. Богданова Настя</p>
+    <nav class="footer__links">
+      <a class="footer__link" href="" target="">Главная</a>
+      <a class="footer__link" href="" target="">О проекте</a>
+      <a class="footer__link" href="" target="">Яндекс.Практикум</a>
+  </nav>
+  <nav class="footer__icons">
+    <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo" class=""></a>
+    <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo" class=""></a>
+</nav>
+  </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
