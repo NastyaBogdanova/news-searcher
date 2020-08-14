@@ -4,13 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+  <title>NewsAnalyzer</title>
+  <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+  <header class="header">
+    <img class="logo" src="<%=require('../../images/NewsAnalyzer-black.svg')%>" alt="NewsAnalyzer logo">
+    <div class="header__links header__links_theme_white">
+      <a class="header__link" href="../../../dist/index.html">Главная</a>
+      <a class="header__link" href="">О проекте</a>
+    </div>
+  </header>
+  <main class="main">
+    <section class="info">
+      <p class="info__link">Главная / Аналитика</p>
+      <h2 class="info__title">Вы спросили: </h2>
+      <p class="info__text">Новостей за неделю:<span></span></p>
+      <p class="info__text">Упоминаний в заголовках:<span></span></p>
+    </section>
+    <section class="analytics">
+      <h3 class="analytics__title">Аналитика по дням</h3>
+      <div class="analytics__table-names">
+        <p class="analytics__table-name">ДАТА</p>
+        <p class="analytics__table-name">Кол-во упоминаний</p>
+      </div>
+      <div class="analytics__container">
+      <div class="analytics__elem">
+        <p class="analytics__elem-date"></p>
+        <div class="analytics__elem-percent">
+          <p class="analytics__percent-number"></p>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020. Богданова Настя</p>
+    <nav class="footer__links">
+      <a class="footer__link" href="">Главная</a>
+      <a class="footer__link" href="../../../dist/about.html">О проекте</a>
+      <a class="footer__link" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+    </nav>
+    <nav class="footer__icons">
+      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
+      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
+    </nav>
+  </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>

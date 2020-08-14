@@ -4,66 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+  <title>NewsAnalyzer</title>
+  <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-  <header>
-    <img src="<%=require('../../images/NewsAnalyzer.svg')%>" alt="NewsAnalyzer logo" class="logo">
-    <div class="">
-      <a class="" href="#">Главная</a>
-      <a class="" href="#">О проекте</a>
+  <header class="header">
+    <img class="logo" src="<%=require('../../images/NewsAnalyzer.svg')%>" alt="NewsAnalyzer logo">
+    <div class="header__links">
+      <a class="header__link" href="">Главная</a>
+      <a class="header__link" href="../../../dist/about.html">О проекте</a>
     </div>
   </header>
-  <main>
-    <section>
-      <h1>Что творится в мире?</h1>
-      <p>Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-      <form>
-        <input type="text" id="" name="" class="" placeholder="Введите тему новости">
-        <button>Искать</button>
+  <main class="main">
+    <section class="search">
+      <h1 class="search__title">Что творится в мире?</h1>
+      <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+      <form class="search__form">
+        <input class="search__input" type="text" name="name" placeholder="Введите тему новости">
+        <button class="search__button">Искать</button>
       </form>
     </section>
-    <section>
-      <p>Слайдер</p>
+    <section class="preloader">
+      <p class="preloader__elem">Слайдер</p>
     </section>
-    <section>
-      <img src="<%=require('../../images/not-found.svg')%>" alt="Ничего не найдено" class="">
-      <p>Ничего не найдено</p>
-      <p>К сожалению по вашему запросу ничего не найдено.</p>
+    <section class="not-found">
+      <img class="not-found__image" src="<%=require('../../images/not-found.svg')%>" alt="Ничего не найдено">
+      <h2 class="not-found__title">Ничего не найдено</h2>
+      <p class="not-found__text">К сожалению по вашему запросу ничего не найдено.</p>
     </section>
-    <section>
-      <h2>Результаты поиска</h2>
-      <a>Посмотреть аналитику &#8250;</a>
-      <div class="news-list">
-        <div class="news">
-          <img src="" alt="Картинка новости" class="">
-          <p>Дата</p>
-          <h3>Заголовок новости</h3>
-          <p>Текст новости</p>
-          <p>Источник новости</p>
+    <section class="news">
+      <h2 class="news__title">Результаты поиска</h2>
+      <a class="news__analytics" href="../../../dist/analytics.html">Посмотреть аналитику &#8250;</a>
+      <div class="news__list">
+        <div class="news__element">
+          <img class="news__image" src="" alt="Картинка новости">
+          <p class="news__date">Дата</p>
+          <h3 class="news__name">Заголовок новости</h3>
+          <p class="news__text">Текст новости</p>
+          <p class="news__source">Источник новости</p>
         </div>
       </div>
-      <button>Показать ещё</button>
-      
+      <button class="news__show-more">Показать ещё</button>
     </section>
-    <section>
-      <img src="" alt="Author" class="">
-      <h2>Об авторе</h2>
-      <p>Текст об авторе</p>
+    <section class="author">
+      <img class="author__image" src="" alt="Author">
+      <h2 class="author__title">Об авторе</h2>
+      <p class="author__text">Текст об авторе</p>
     </section>
   </main>
-  <footer>
+  <footer class="footer">
     <p class="footer__copyright">&copy; 2020. Богданова Настя</p>
     <nav class="footer__links">
-      <a class="footer__link" href="" target="">Главная</a>
-      <a class="footer__link" href="" target="">О проекте</a>
-      <a class="footer__link" href="" target="">Яндекс.Практикум</a>
-  </nav>
-  <nav class="footer__icons">
-    <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo" class=""></a>
-    <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo" class=""></a>
-</nav>
+      <a class="footer__link" href="">Главная</a>
+      <a class="footer__link" href="../../../dist/about.html">О проекте</a>
+      <a class="footer__link" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+    </nav>
+    <nav class="footer__icons">
+      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
+      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
+    </nav>
   </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>

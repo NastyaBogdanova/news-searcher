@@ -4,26 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+  <title>NewsAnalyzer</title>
+  <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-  <header></header>
-  <main>
-    <section>
-      <h2>Клиентам</h2>
-      <p>Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
-      <p>Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
-      <p>Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.</p>
-      <p>При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
-      <p>Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
+  <header class="header">
+    <img class="logo" src="<%=require('../../images/NewsAnalyzer-black.svg')%>" alt="NewsAnalyzer logo">
+    <div class="header__links header__links_theme_white">
+      <a class="header__link" href="../../../dist/index.html">Главная</a>
+      <a class="header__link" href="">О проекте</a>
+    </div>
+  </header>
+  <main class="main">
+    <section class="clients">
+      <h2 class="clients__title">Клиентам</h2>
+      <div class="clients__content">
+        <p class="clients__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
+        <p class="clients__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
+        <p class="clients__text">Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.</p>
+        <p class="clients__text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
+        <p class="clients__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>  
+      </div>
     </section>
-    <section>
-      <h2>Используемые технологии</h2>
-      Список
+    <section class="technologies">
+      <h2 class="technologies__title">Используемые технологии</h2>
+      <div class="technologies__container">
+        <figure class="technologies__item">
+            <img class="technologies__image" src="<%=require('../../images/HTML.svg')%>" alt="HTML">
+            <figcaption class="technologies__name">HTML</figcaption>
+        </figure>
+        <figure class="technologies__item">
+          <img class="technologies__image" src="<%=require('../../images/CSS.svg')%>" alt="CSS">
+          <figcaption class="technologies__name">CSS</figcaption>
+      </figure>
+      <figure class="technologies__item">
+        <img class="technologies__image" src="<%=require('../../images/JS.svg')%>" alt="Java Script">
+        <figcaption class="technologies__name">Java Script</figcaption>
+      </figure>
+      <figure class="technologies__item">
+        <img class="technologies__image" src="<%=require('../../images/Webpack.svg')%>" alt="Webpack">
+        <figcaption class="technologies__name">Webpack</figcaption>
+      </figure>
+      </div>
+    </section>
+    <section class="author">
+      <img class="author__image" src="" alt="Author">
+      <h2 class="author__title">Об авторе</h2>
+      <p class="author__text">Текст об авторе</p>
+    </section>
+    <section class="history">
+      <h2 class="history__title">История коммитов из GitHub</h2>
+      <a class="history__github-link" href="#" target="_blank">Открыть в  Github</a>
+      <div class="history__commits-list">
+        <div class="history__commit">
+          <p class="history__commit-date">Дата</p>
+          <img class="history__author-photo" src="" alt="Фото автора">
+          <h3 class="history__author-name">Имя автора</h3>
+          <p class="history__author-mail">Почта</p>
+          <p class="history__commit-text">Текст комита</p>
+        </div>
+      </div>
     </section>
   </main>
-  <footer></footer>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020. Богданова Настя</p>
+    <nav class="footer__links">
+      <a class="footer__link" href="">Главная</a>
+      <a class="footer__link" href="../../../dist/about.html">О проекте</a>
+      <a class="footer__link" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+    </nav>
+    <nav class="footer__icons">
+      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
+      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
+    </nav>
+  </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
