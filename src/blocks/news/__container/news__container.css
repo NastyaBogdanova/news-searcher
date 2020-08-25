@@ -1,0 +1,6 @@
+.news__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 64px 0;
+}

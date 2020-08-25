@@ -1,0 +1,15 @@
+.header__link {
+    font-style:  normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 80px;
+    margin-right: 34px;
+    text-decoration: none;
+    color: #B6BCBF;
+}
+.header__link:hover {
+    color: #FFFFFF;
+}
+.header__link:last-child {
+    margin-right: 0;
+}

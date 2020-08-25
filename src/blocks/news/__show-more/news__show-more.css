@@ -1,0 +1,15 @@
+.news__show-more {
+    border: none;
+    background: #FFFFFF;
+    border-radius: 80px;
+    width: 288px;
+    height: 64px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    margin: auto;
+}
+.news__show-more:hover {
+    opacity: 0.9;
+}

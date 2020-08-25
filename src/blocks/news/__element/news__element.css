@@ -1,0 +1,10 @@
+.news__element {
+    background: #FFFFFF;
+    border-radius: 16px;
+    width: 100%;
+    height: 576px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
