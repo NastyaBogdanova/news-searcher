@@ -1,0 +1,12 @@
+.history__github-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+}
+@media screen and (max-width: 575px) {
+    .history__github-link {
+        display: none;
+    }
+}

@@ -1,0 +1,7 @@
+@import url(./__container/history__container.css);
+@import url(./__title/history__title.css);
+@import url(./__github-link/history__github-link.css);
+
+.history {
+    background: #F5F6F7;
+}
