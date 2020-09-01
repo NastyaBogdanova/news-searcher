@@ -11,3 +11,8 @@
 .footer__link:last-child {
     margin-right: 0;
 }
+@media screen and (max-width: 768px) {
+    .footer__link {
+        margin: 0 15px 0 0;
+    }
+}

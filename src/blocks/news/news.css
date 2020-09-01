@@ -13,5 +13,10 @@
 
 .news {
     background: #F5F6F7;
-    padding: 80px 104px;
+    padding: 80px 0;
+}
+@media screen and (max-width: 768px) {
+    .news {
+        padding: 40px 0;
+    }
 }

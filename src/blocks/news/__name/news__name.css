@@ -4,3 +4,24 @@
     line-height: 30px;
     margin: 0 24px 14px;
 }
+@media screen and (max-width: 1024px) {
+    .news__name {
+        font-size: 22px;
+        line-height: 26px;
+        margin: 0 16px 10px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .news__name {
+        font-size: 18px;
+        line-height: 20px;
+        margin: 0 16px 10px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .news__name {
+        font-size: 22px;
+        line-height: 26px;
+        margin: 0 16px 10px;
+    }
+}

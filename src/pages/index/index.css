@@ -8,6 +8,7 @@
 @import url(../../blocks/news/news.css);
 @import url(../../blocks/author/author.css);
 @import url(../../blocks/footer/footer.css);
+@import url(../../blocks/main/main.css);
 
 body {
     font-family: Roboto;

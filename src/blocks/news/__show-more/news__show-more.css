@@ -13,3 +13,19 @@
 .news__show-more:hover {
     opacity: 0.9;
 }
+@media screen and (max-width: 768px) {
+    .news__show-more {
+        width: 240px;
+        height: 56px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .news__show-more {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .news__show-more {
+        width: calc(100% - 32px);
+    }
+}

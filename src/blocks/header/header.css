@@ -7,8 +7,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
     padding: 0 104px;
+    max-width: 1440px;
     min-height: 80px;
     background: rgba(196, 196, 196, 0.01);
     box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 0 40px;
+        min-height: 64px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 0 40px;
+        min-height: 64px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .header {
+        padding: 0 16px;
+        min-height: 56px;
+    }
 }

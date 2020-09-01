@@ -8,3 +8,30 @@
     flex-direction: column;
     justify-content: space-between;
 }
+@media screen and (max-width: 1220px) {
+    .news__element {
+        height: 520px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .news__element {
+        height: 470px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .news__element {
+        height: 420px;
+        max-width: 300px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .news__element {
+        height: 460px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .news__element {
+        height: 447px;
+    }
+}

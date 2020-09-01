@@ -11,3 +11,13 @@
     align-items: center;
     padding: 80px 0;
 }
+@media screen and (max-width: 768px) {
+    .not-found {
+        padding: 40px 0;
+    }
+}
+@media screen and (max-width: 414px) {
+    .not-found {
+        padding: 0 16px;
+    }
+}

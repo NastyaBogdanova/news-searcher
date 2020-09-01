@@ -7,3 +7,8 @@
     border: none;
     border-radius: 100px;
 }
+@media screen and (max-width: 414px) {
+    .search__input {
+        width: 100%;
+    }
+}

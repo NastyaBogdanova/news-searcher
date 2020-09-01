@@ -6,3 +6,8 @@
 .author__text:last-child {
     margin-bottom: 0;
 }
+@media screen and (max-width: 768px) {
+    .author__text {
+        margin: 0;
+    }
+}
