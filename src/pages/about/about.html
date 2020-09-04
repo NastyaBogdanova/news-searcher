@@ -66,15 +66,125 @@
         <h2 class="history__title">История коммитов из GitHub</h2>
         <a class="history__github-link" href="#" target="_blank">Открыть в  Github &#8250;</a>
       </div>
-      <div class="history__commits-list">
-        <div class="history__commit">
-          <p class="history__commit-date">Дата</p>
-          <img class="history__author-photo" src="" alt="Фото автора">
-          <h3 class="history__author-name">Имя автора</h3>
-          <p class="history__author-mail">Почта</p>
-          <p class="history__commit-text">Текст комита</p>
+      <div class="history__slider glide">
+        <div class="history__commit-list glide__track" data-glide-el="track">
+          <ul class="history__slides glide__slides">
+            <li class="history__slide glide__slide">
+              <div class="history__commit">
+                <p class="history__commit-date">1 сентября 2020</p>
+                <div class="history__author-profile">
+                  <img class="history__author-photo" src="<%=require('../../images/cookie.jpg')%>" alt="Фото автора">
+                  <div class="history__author-sourse">
+                    <h3 class="history__author-name">Cookie Monster</h3>
+                    <p class="history__author-mail">cookie@gmail.com</p>
+                  </div>
+                </div>
+                <p class="history__commit-text">Текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита</p>
+              </div>
+            </li>
+            <li class=" history__slide glide__slide">
+              <div class="history__commit">
+                <p class="history__commit-date">1 сентября 2020</p>
+                <div class="history__author-profile">
+                  <img class="history__author-photo" src="<%=require('../../images/ernie.jpg')%>" alt="Фото автора">
+                  <div class="history__author-sourse">
+                    <h3 class="history__author-name">Ernie</h3>
+                    <p class="history__author-mail">ernie@gmail.com</p>
+                  </div>
+                </div>
+                <p class="history__commit-text">Текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита</p>
+              </div>
+            </li>
+            <li class="history__slide glide__slide">
+              <div class="history__commit">
+                <p class="history__commit-date">1 сентября 2020</p>
+                <div class="history__author-profile">
+                  <img class="history__author-photo" src="<%=require('../../images/kermit.jpg')%>" alt="Фото автора">
+                  <div class="history__author-sourse">
+                    <h3 class="history__author-name">Kermit</h3>
+                    <p class="history__author-mail">kermit@gmail.com</p>
+                  </div>
+                </div>
+                <p class="history__commit-text">Текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита</p>
+              </div>
+            </li>
+            <li class="history__slide glide__slide">
+              <div class="history__commit">
+                <p class="history__commit-date">1 сентября 2020</p>
+                <div class="history__author-profile">
+                  <img class="history__author-photo" src="<%=require('../../images/elmo.jpg')%>" alt="Фото автора">
+                  <div class="history__author-sourse">
+                    <h3 class="history__author-name">Elmo</h3>
+                    <p class="history__author-mail">elmo@gmail.com</p>
+                  </div>
+                </div>
+                <p class="history__commit-text">Текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита</p>
+              </div>
+            </li>
+            <li class="history__slide glide__slide">
+              <div class="history__commit">
+                <p class="history__commit-date">1 сентября 2020</p>
+                <div class="history__author-profile">
+                  <img class="history__author-photo" src="<%=require('../../images/abby.jpg')%>" alt="Фото автора">
+                  <div class="history__author-sourse">
+                    <h3 class="history__author-name">Abby</h3>
+                    <p class="history__author-mail">abby@gmail.com</p>
+                  </div>
+                </div>
+                <p class="history__commit-text">Текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита текст коммита</p>
+              </div>
+            </li>
+          </ul>
+          <div class="history__gradient history__gradient_left"></div>
+          <div class="history__gradient history__gradient_right"></div>
+        </div>
+        <div class="history__arrows glide__controls" data-glide-el="controls">
+          <button class="history__arrow glide__arrow glide__arrow--left" data-glide-dir="<<">
+            <svg width="60" height="60" viewBox="10 7 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+              <circle cx="30" cy="27" r="20" fill="#1A1B22"/>
+              </g>
+              <path d="M28.4144 27.0001L33.7073 32.293L32.293 33.7072L25.5859 27.0001L32.293 20.293L33.7073 21.7072L28.4144 27.0001Z" fill="white"/>
+              <defs>
+              <filter id="filter0_d" x="0" y="0" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+              <feOffset dy="3"/>
+              <feGaussianBlur stdDeviation="5"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0.0534375 0 0 0 0 0.101475 0 0 0 0 0.225 0 0 0 0.2 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+              </filter>
+              </defs>
+              </svg>
+          </button>
+          <button class="history__arrow glide__arrow glide__arrow--right" data-glide-dir=">>">
+            <svg width="60" height="60" viewBox="10 7 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d)">
+              <circle r="20" transform="matrix(-1 0 0 1 30 27)" fill="#1A1B22"/>
+              </g>
+              <path d="M31.5856 27.0001L26.2927 32.293L27.707 33.7072L34.4141 27.0001L27.707 20.293L26.2927 21.7072L31.5856 27.0001Z" fill="white"/>
+              <defs>
+              <filter id="filter0_d" x="0" y="0" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+              <feOffset dy="3"/>
+              <feGaussianBlur stdDeviation="5"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0.0534375 0 0 0 0 0.101475 0 0 0 0 0.225 0 0 0 0.2 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+              </filter>
+              </defs>
+              </svg>
+          </button>
+        </div>
+        <div class="history__bullets glide__bullets" data-glide-el="controls[nav]">
+          <button class="history__bullet glide__bullet" data-glide-dir="=0"></button>
+          <button class="history__bullet glide__bullet" data-glide-dir="=1"></button>
+          <button class="history__bullet glide__bullet" data-glide-dir="=2"></button>
         </div>
       </div>
+      <a class="history__github-button" href="#" target="_blank">Открыть в  Github</a>
     </section>
   </main>
   <footer class="footer">

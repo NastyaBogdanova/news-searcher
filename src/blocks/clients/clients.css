@@ -10,11 +10,11 @@
 
 @media screen and (max-width: 768px) {
     .clients {
-        margin: 30px 40px;
+        padding: 30px 40px;
     }
 }
 @media screen and (max-width: 414px) {
     .clients {
-        margin: 16px 16px;
+        padding: 16px 16px;
     }
 }

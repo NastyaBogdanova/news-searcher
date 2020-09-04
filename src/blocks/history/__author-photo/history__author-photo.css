@@ -1,0 +1,12 @@
+.history__author-photo {
+    height: 64px;
+    width: 64px;
+    border-radius: 1000px;
+    margin: 0 16px 0 0;
+}
+@media screen and (max-width: 1024px) {
+    .history__author-photo {
+        width: 48px;
+        height: 48px;
+    }
+}

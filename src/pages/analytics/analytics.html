@@ -9,16 +9,19 @@
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-  <header class="header">
+  <header class="header header_theme_white">
     <img class="header__logo" src="<%=require('../../images/NewsAnalyzer-black.svg')%>" alt="NewsAnalyzer logo">
-    <div class="header__links header__links_theme_white">
-      <a class="header__link" href="../../../dist/index.html">Главная</a>
-      <a class="header__link" href="">О проекте</a>
+    <div class="header__links">
+      <a class="header__link header__link_theme_white" href="../../../dist/index.html">Главная</a>
+      <a class="header__link header__link_theme_white" href="../../../dist/about.html">О проекте</a>
     </div>
   </header>
   <main class="main">
     <section class="info">
-      <p class="info__link">Главная / Аналитика</p>
+      <ul class="info__breadcrumb">
+        <li class="info__breadcrumb-item"><a class="info__breadcrumb-link" href="../../../dist/index.html">Главная</a></li>
+        <li class="info__breadcrumb-item active">Аналитика</li>
+      </ul>  
       <h2 class="info__title">Вы спросили: </h2>
       <p class="info__text">Новостей за неделю:<span></span></p>
       <p class="info__text">Упоминаний в заголовках:<span></span></p>
