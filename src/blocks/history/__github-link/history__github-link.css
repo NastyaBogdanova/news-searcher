@@ -5,6 +5,9 @@
     line-height: 24px;
     color: #1A1B22;
 }
+.history__github-link:hover {
+    opacity: 0.9;
+}
 @media screen and (max-width: 575px) {
     .history__github-link {
         display: none;
