@@ -1,0 +1,28 @@
+@import url(./__container/diagram__container.css);
+@import url(./__date/diagram__date.css);
+@import url(./__dates/diagram__dates.css);
+@import url(./__numbers/diagram__numbers.css);
+@import url(./__percent/diagram__percent.css);
+@import url(./__percents-scale/diagram__percents-scale.css);
+@import url(./__scale-number/diagram__scale-number.css);
+@import url(./__table-month/diagram__table-month.css);
+@import url(./__table-name/diagram__table-name.css);
+@import url(./__table-names/diagram__table-names.css);
+@import url(./__title/diagram__title.css);
+
+.diagram {
+    background: #F5F6F7;
+    max-width: 1440px;
+    padding: 80px 104px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+    .diagram {
+        padding: 40px 40px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .diagram {
+        padding: 24px 16px 38px;
+    }
+}

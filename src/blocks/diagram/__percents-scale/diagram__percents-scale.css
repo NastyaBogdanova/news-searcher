@@ -1,0 +1,15 @@
+.diagram__percents-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    margin: 0 0 10px 0;
+}
+@media screen and (max-width: 414px) {
+    .diagram__percents-scale {
+        display: none;
+    }
+}

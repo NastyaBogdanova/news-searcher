@@ -7,7 +7,7 @@
 @import url(../../blocks/footer/footer.css);
 @import url(../../blocks/main/main.css);
 @import url(../../blocks/info/info.css);
-@import url(../../blocks/analytics/analytics.css);
+@import url(../../blocks/diagram/diagram.css);
 
 body {
     font-family: Roboto;

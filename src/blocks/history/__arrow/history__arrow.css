@@ -1,0 +1,27 @@
+.history__arrow {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    position: absolute;
+    display: block;
+    top: 45%;
+    z-index: 2;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 18px;
+    box-shadow: 0px 3px 10px rgba(14, 26, 57, 0.2);
+}
+.history__arrow:focus {
+    outline: none; 
+  }
+.history__arrow:hover {
+    opacity: 0.8; 
+}
+@media screen and (max-width: 768px) {
+    .history__arrow {
+        display: none;
+    }
+  }

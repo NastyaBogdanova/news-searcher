@@ -19,39 +19,70 @@
   <main class="main">
     <section class="info">
       <ul class="info__breadcrumb">
-        <li class="info__breadcrumb-item"><a class="info__breadcrumb-link" href="../../../dist/index.html">Главная</a></li>
+        <li class="info__breadcrumb-item"><a class="info__breadcrumb-link" href="../../../dist/index.html">Главная </a></li>
         <li class="info__breadcrumb-item active">Аналитика</li>
       </ul>  
       <h2 class="info__title">Вы спросили: "<span class="info__news-name">Путешествия</span>"</h2>
       <p class="info__text">Новостей за неделю: <span class="info__news-week">115</span></p>
       <p class="info__text">Упоминаний в заголовках: <span class="info__news-titles">130</span></p>
     </section>
-    <section class="analytics">
-      <h3 class="analytics__title">Аналитика по дням</h3>
-      <div class="analytics__table-names">
-        <p class="analytics__table-name">ДАТА</p>
-        <p class="analytics__table-name">Кол-во упоминаний</p>
-      </div>
-      <div class="analytics__container">
-      <div class="analytics__elem">
-        <p class="analytics__elem-date"></p>
-        <div class="analytics__elem-percent">
-          <p class="analytics__percent-number"></p>
+    <section class="diagram">
+      <h3 class="diagram__title">Аналитика по дням</h3>
+      <div class="diagram__table-names">
+        <div class="diagram__table-date">
+          <p class="diagram__table-name">дата</p>
+          <p class="diagram__table-month">(август)</p>
         </div>
+        <p class="diagram__table-name">кол-во упоминаний, %</p>
       </div>
+      <div class="diagram__container">
+          <div class="diagram__dates">
+            <p class="diagram__date">19, пн</p>
+            <p class="diagram__date">20, вт</p>
+            <p class="diagram__date">21, ср</p>
+            <p class="diagram__date">22, чт</p>
+            <p class="diagram__date">23, пт</p>
+            <p class="diagram__date">24, сб</p>
+            <p class="diagram__date">25, вс</p>
+          </div>
+          <div class="diagram__numbers">
+            <div class="diagram__percents-scale">
+              <p class="diagram__scale-number">0</p>
+              <p class="diagram__scale-number">25</p>
+              <p class="diagram__scale-number">50</p>
+              <p class="diagram__scale-number">75</p>
+              <p class="diagram__scale-number">100</p>
+            </div>
+            <div class="diagram__percents">
+              <p class="diagram__percent">100</p>
+              <p class="diagram__percent">100</p>
+              <p class="diagram__percent">100</p>
+              <p class="diagram__percent">100</p>
+              <p class="diagram__percent">100</p>
+              <p class="diagram__percent">100</p>
+              <p class="diagram__percent">100</p>
+            </div>
+            <div class="diagram__percents-scale">
+              <p class="diagram__scale-number">0</p>
+              <p class="diagram__scale-number">25</p>
+              <p class="diagram__scale-number">50</p>
+              <p class="diagram__scale-number">75</p>
+              <p class="diagram__scale-number">100</p>
+            </div>
+        </div>
       </div>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020. Богданова Настя</p>
     <nav class="footer__links">
-      <a class="footer__link" href="">Главная</a>
+      <a class="footer__link" href="../../../dist/index.html">Главная</a>
       <a class="footer__link" href="../../../dist/about.html">О проекте</a>
       <a class="footer__link" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
     </nav>
     <nav class="footer__icons">
-      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
-      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
+      <a class="footer__icon" href="https://github.com/NastyaBogdanova" target="_blank"><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
+      <a class="footer__icon" href="" target="_blank"><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
     </nav>
   </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>

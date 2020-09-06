@@ -64,7 +64,7 @@
     <section class="history">
       <div class="history__container">
         <h2 class="history__title">История коммитов из GitHub</h2>
-        <a class="history__github-link" href="#" target="_blank">Открыть в  Github &#8250;</a>
+        <a class="history__github-link" href="https://github.com/NastyaBogdanova" target="_blank">Открыть в  Github &#8250;</a>
       </div>
       <div class="history__slider glide">
         <div class="history__commit-list glide__track" data-glide-el="track">
@@ -139,7 +139,7 @@
           <div class="history__gradient history__gradient_right"></div>
         </div>
         <div class="history__arrows glide__controls" data-glide-el="controls">
-          <button class="history__arrow glide__arrow glide__arrow--left" data-glide-dir="<<">
+          <button class="history__arrow history__arrow_left glide__arrow" data-glide-dir="<<">
             <svg width="60" height="60" viewBox="10 7 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
               <circle cx="30" cy="27" r="20" fill="#1A1B22"/>
@@ -158,7 +158,7 @@
               </defs>
               </svg>
           </button>
-          <button class="history__arrow glide__arrow glide__arrow--right" data-glide-dir=">>">
+          <button class="history__arrow history__arrow_right glide__arrow" data-glide-dir=">>">
             <svg width="60" height="60" viewBox="10 7 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_d)">
               <circle r="20" transform="matrix(-1 0 0 1 30 27)" fill="#1A1B22"/>
@@ -180,7 +180,7 @@
         </div>
         <div class="history__bullets glide__bullets" data-glide-el="controls[nav]">
           <button class="history__bullet glide__bullet" data-glide-dir="=0"></button>
-          <button class="history__bullet glide__bullet" data-glide-dir="=1"></button>
+          <button class="history__bullet history__bullet_active glide__bullet" data-glide-dir="=1"></button>
           <button class="history__bullet glide__bullet" data-glide-dir="=2"></button>
         </div>
       </div>
@@ -190,12 +190,12 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020. Богданова Настя</p>
     <nav class="footer__links">
-      <a class="footer__link" href="">Главная</a>
-      <a class="footer__link" href="../../../dist/about.html">О проекте</a>
+      <a class="footer__link" href="../../../dist/index.html">Главная</a>
+      <a class="footer__link" href="">О проекте</a>
       <a class="footer__link" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
     </nav>
     <nav class="footer__icons">
-      <a class="footer__icon" href="" target=""><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
+      <a class="footer__icon" href="https://github.com/NastyaBogdanova" target="_blank"><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
       <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
     </nav>
   </footer>
