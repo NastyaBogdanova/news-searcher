@@ -16,6 +16,10 @@
 .history__github-button:hover {
     opacity: 0.9;
 }
+.history__github-button:focus {
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    outline: none;
+}
 @media screen and (max-width: 575px) {
     .history__github-button {
         display: block;

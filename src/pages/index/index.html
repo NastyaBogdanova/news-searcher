@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Cервис для анализа происходящих в мире событий, который поможет установить, насколько популярны новости на определённую тему.">
+  <meta name="author" content="Анастасия Богданова">
   <title>NewsAnalyzer</title>
   <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
@@ -22,7 +24,7 @@
           <h1 class="search__title">Что в мире творится?</h1>
           <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
           <form class="search__form">
-            <input class="search__input" type="text" name="name" placeholder="Введите тему новости">
+            <input class="search__input" type="text" name="name" required placeholder="Введите тему новости">
             <button class="search__button">Искать</button>
           </form>
         </div>
@@ -41,7 +43,7 @@
     <section class="news">
         <div class="news__container">
           <h2 class="news__title">Результаты поиска</h2>
-          <a class="news__analytics" href="../../../dist/analytics.html">Посмотреть аналитику &#8250;</a>
+          <a class="news__analytics" href="./analytics.html">Посмотреть аналитику &#8250;</a>
         </div>
       <div class="news__list">
         <a class="news__element" href="">
@@ -117,12 +119,12 @@
       <p class="footer__copyright">&copy; 2020 Богданова Настя</p>
       <nav class="footer__links">
         <a class="footer__link" href="">Главная</a>
-        <a class="footer__link" href="../../../dist/about.html">О проекте</a>
+        <a class="footer__link" href="./about.html">О проекте</a>
         <a class="footer__link" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
       </nav>
       <nav class="footer__icons">
         <a class="footer__icon" href="https://github.com/NastyaBogdanova" target="_blank"><img src="<%=require('../../images/GitHub.svg')%>" alt="GitHub logo"></a>
-        <a class="footer__icon" href="" target=""><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
+        <a class="footer__icon" href="https://www.facebook.com/" target="_blank"><img src="<%=require('../../images/FaceBook.svg')%>" alt="FaceBook logo"></a>
       </nav>
   </footer>
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>

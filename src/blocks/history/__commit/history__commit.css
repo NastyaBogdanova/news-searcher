@@ -7,6 +7,9 @@
     padding: 24px;
     box-sizing: border-box;
 }
+.history__commit:hover, .history__commit:focus {
+    box-shadow: 0 0 58px 0 rgba(8, 29, 45, 0.1);
+}
 @media screen and (max-width: 1024px) {
     .history__commit {
         width: 336px;

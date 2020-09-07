@@ -11,7 +11,7 @@
 @import url(../../blocks/main/main.css);
 
 body {
-    font-family: Roboto;
+    font-family: Roboto, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }

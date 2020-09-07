@@ -10,7 +10,7 @@
 @import url(../../blocks/diagram/diagram.css);
 
 body {
-    font-family: Roboto;
+    font-family: Roboto, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }

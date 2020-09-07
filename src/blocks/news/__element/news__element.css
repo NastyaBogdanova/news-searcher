@@ -8,7 +8,10 @@
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
-    color: #1A1B22;;
+    color: #1A1B22;
+}
+.news__element:hover, .news__element:focus {
+    box-shadow: 0 0 58px 0 rgba(8, 29, 45, 0.1);
 }
 @media screen and (max-width: 1220px) {
     .news__element {
