@@ -1,0 +1,25 @@
+.history__commit {
+    width: 400px;
+    height: 288px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    margin: 0 16px 0 0;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.history__commit:hover, .history__commit:focus {
+    box-shadow: 0 0 58px 0 rgba(8, 29, 45, 0.1);
+}
+@media screen and (max-width: 1024px) {
+    .history__commit {
+        width: 336px;
+        height: 242px;
+        margin: 0 8px 0 0;
+    }
+}
+@media screen and (max-width: 414px) {
+    .history__commit {
+        max-width: 288px;
+        height: 264px;
+    }
+}

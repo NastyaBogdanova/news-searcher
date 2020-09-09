@@ -1,0 +1,94 @@
+.glide__arrow {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  position: absolute;
+  display: block;
+  top: 45%;
+  z-index: 2;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 18px;
+  box-shadow: 0px 3px 10px rgba(14, 26, 57, 0.2);
+}
+  .glide__arrow:focus {
+    outline: none; 
+  }
+  .glide__arrow:hover {
+    opacity: 0.8; 
+  }
+  .glide__arrow--left {
+    left: 24px; 
+  }
+  .glide__arrow--right {
+    right: 24px; 
+  }
+  .glide__arrow--disabled {
+    opacity: 0.33; 
+  }
+
+.glide__bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: -48px;
+  left: 50%;
+  display: inline-flex;
+  list-style: none;
+  transform: translateX(-50%); 
+}
+
+.glide__bullet {
+  background-color: #D1D2D6;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+  margin: 0 8px; 
+}
+  .glide__bullet:focus {
+    outline: none; 
+  }
+  .glide__bullet:hover, .glide__bullet:focus {
+    border: 2px solid rgb(49, 46, 46);
+    background-color: #D1D2D6; 
+  }
+  .glide__bullet--active {
+    background-color: #1A1B22;
+  }
+
+.glide--swipeable {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab; 
+}
+
+.glide--dragging {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing; 
+}
+.glide__left-control {
+  background-image: url("../../images/left.svg");
+}
+@media screen and (max-width: 768px) {
+  .glide__arrow {
+      display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .glide__bullets {
+      bottom: -32px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .glide__bullets {
+      bottom: -16px;
+  }
+}

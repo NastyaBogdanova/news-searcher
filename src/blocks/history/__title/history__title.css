@@ -1,0 +1,18 @@
+.history__title {
+    font-family: Roboto Slab;
+    font-size: 40px;
+    line-height: 46px;
+    margin: 0;
+}
+@media screen and (max-width: 1024px) {
+    .history__title {
+        max-width: 400px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .history__title {
+        max-width: 336px;
+        font-size: 30px;
+        line-height: 34px;
+    }
+}

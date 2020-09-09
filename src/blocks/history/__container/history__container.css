@@ -1,0 +1,20 @@
+.history__container {
+    display: flex;
+    max-width: 1440px;
+    padding: 0 104px;
+    justify-content: space-between;
+    margin: 0 auto 64px;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .history__container {
+        padding: 0 40px;
+        margin: 0 auto 32px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .history__container {
+        padding: 0 16px;
+        margin: 0 auto 16px;
+    }
+}

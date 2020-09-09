@@ -1,0 +1,14 @@
+.search__input {
+    font-size: 16px;
+    line-height: 22px;
+    color: #1A1B22;
+    width: 68%;
+    outline: none;
+    border: none;
+    border-radius: 100px;
+}
+@media screen and (max-width: 414px) {
+    .search__input {
+        width: 100%;
+    }
+}

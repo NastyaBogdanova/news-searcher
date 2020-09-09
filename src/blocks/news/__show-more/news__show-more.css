@@ -1,0 +1,35 @@
+.news__show-more {
+    border: none;
+    background: #FFFFFF;
+    border-radius: 80px;
+    width: 288px;
+    height: 64px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    margin: auto;
+}
+.news__show-more:hover {
+    opacity: 0.9;
+}
+.news__show-more:focus {
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    outline: none;
+}
+@media screen and (max-width: 768px) {
+    .news__show-more {
+        width: 240px;
+        height: 56px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .news__show-more {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .news__show-more {
+        width: calc(100% - 32px);
+    }
+}

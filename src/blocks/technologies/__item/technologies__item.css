@@ -1,0 +1,11 @@
+.technologies__item {
+    margin: 0 70px 0 0;
+}
+.technologies__item:last-child {
+    margin-right: 0;
+}
+@media screen and (max-width: 1120px) {
+    .technologies__item {
+        margin: 0;
+    }
+}

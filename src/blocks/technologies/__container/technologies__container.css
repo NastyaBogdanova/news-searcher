@@ -1,0 +1,16 @@
+.technologies__container {
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+}
+@media screen and (max-width: 1300px) {
+    .technologies__container {
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 1120px) {
+    .technologies__container {
+        flex-direction: column;
+    }
+}

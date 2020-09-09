@@ -1,0 +1,14 @@
+.technologies__item-container {
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+    .technologies__item-container {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-column-gap: 65px;
+        grid-row-gap: 42px;
+        justify-items: center;
+    }
+}

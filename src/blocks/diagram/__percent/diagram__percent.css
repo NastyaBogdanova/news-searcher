@@ -1,0 +1,24 @@
+.diagram__percent {
+    height: 24px;
+    margin: 0 0 56px 0;
+    width: 100%;
+    background: #2F71E5;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    color: #FFFFFF;
+    padding-left: 6px;
+    box-sizing: border-box;
+}
+.diagram__percent:last-child {
+    margin: 0 0 16px 0;
+}
+@media screen and (max-width: 414px) {
+    .diagram__percent {
+        margin: 0 0 24px 0;
+    }
+    .diagram__percent:last-child {
+        margin: 0;
+    }
+}

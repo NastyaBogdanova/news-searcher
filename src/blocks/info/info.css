@@ -1,0 +1,23 @@
+@import url(../info/__breadcrumb-item/info__breadcrumb-item.css);
+@import url(../info/__breadcrumb/info__breadcrumb.css);
+@import url(../info/__breadcrumb-link/info__breadcrumb-link.css);
+@import url(../info/__title/info__title.css);
+@import url(../info/__text/info__text.css);
+@import url(../info/__news-week/info__news-week.css);
+@import url(../info/__news-titles/info__news-titles.css);
+
+.info {
+    max-width: 1440px;
+    padding: 40px 104px 80px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+    .info {
+        padding: 32px 40px 40px;
+    }
+}
+@media screen and (max-width: 414px) {
+    .info {
+        padding: 16px 16px 24px;
+    }
+}

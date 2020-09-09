@@ -1,0 +1,8 @@
+.diagram__table-name {
+    margin: 0 75px 0 0;
+}
+@media screen and (max-width: 414px) {
+    .diagram__table-name {
+        margin: 0 50px 0 0;
+    }
+}

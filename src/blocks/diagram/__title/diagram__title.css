@@ -1,0 +1,13 @@
+.diagram__title {
+    font-family: Roboto Slab;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 0 0 48px;
+}
+@media screen and (max-width: 414px) {
+    .diagram__title {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0 0 16px;
+    }
+}

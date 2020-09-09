@@ -1,0 +1,18 @@
+@import url(../../vendor/fonts.css);
+@import url(../../vendor/normalize.css);
+@import url(../../blocks/header/header.css);
+@import url(../../blocks/header/_theme_white/header_theme_white.css);
+@import url(../../blocks/header/__link/_black-active/header__link_black-active.css);
+@import url(../../blocks/header/__link/_theme_white/header__link_theme_white.css);
+@import url(../../blocks/author/author.css);
+@import url(../../blocks/footer/footer.css);
+@import url(../../blocks/main/main.css);
+@import url(../../blocks/clients/clients.css);
+@import url(../../blocks/technologies/technologies.css);
+@import url(../../blocks/history/history.css);
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}

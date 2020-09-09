@@ -1,0 +1,44 @@
+@import url(./__container/history__container.css);
+@import url(./__title/history__title.css);
+@import url(./__github-link/history__github-link.css);
+@import url(./__github-button/history__github-button.css);
+@import url(./__commit/history__commit.css);
+@import url(./__commit-date/history__commit-date.css);
+@import url(./__author-photo/history__author-photo.css);
+@import url(./__author-sourse/history__author-sourse.css);
+@import url(./__author-name/history__author-name.css);
+@import url(./__author-mail/history__author-mail.css);
+@import url(./__commit-text/history__commit-text.css);
+@import url(./__author-profile/history__author-profile.css);
+@import url(./__gradient/history__gradient.css);
+@import url(./__gradient/_left/history__gradient_left.css);
+@import url(./__gradient/_right/history__gradient_right.css);
+@import url(./__slider/history__slider.css);
+@import url(./__slides/history__slides.css);
+@import url(./__slide/history__slide.css);
+@import url(./__arrow/history__arrow.css);
+@import url(./__arrow/_left/history__arrow_left.css);
+@import url(./__arrow/_right/history__arrow_right.css);
+@import url(./__bullets/history__bullets.css);
+@import url(./__bullet/history__bullet.css);
+@import url(./__bullet/_active/history__bullet_active.css);
+
+.history {
+    background: #F5F6F7;
+    padding: 80px 0 148px;
+}
+@media screen and (max-width: 768px) {
+    .history {
+        padding: 40px 0 80px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .history {
+        padding: 40px 0;
+    }
+}
+@media screen and (max-width: 414px) {
+    .history {
+        padding: 32px 0;
+    }
+}

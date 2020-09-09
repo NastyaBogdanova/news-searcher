@@ -1,0 +1,13 @@
+.diagram__date {
+    margin: 0;
+}
+
+@media screen and (max-width: 414px) {
+    .diagram__date {
+        margin: 0 0 24px 0;
+    }
+    .diagram__date:last-child {
+        margin: 0;
+    }
+}
+

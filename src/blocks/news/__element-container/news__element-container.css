@@ -1,0 +1,9 @@
+.news__element-container {
+    max-height: 522px;
+}
+
+@media screen and (max-width: 768px) {
+    .news__element-container {
+        max-height: 372px;
+    }
+}

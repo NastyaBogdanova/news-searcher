@@ -1,0 +1,11 @@
+.footer__icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 28px 0 0;
+}
+.footer__icon:hover {
+    opacity: 0.9;
+}
+.footer__icon:last-child {
+    margin-right: 0;
+}
