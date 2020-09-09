@@ -27,7 +27,7 @@
         width: 160px;
     }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 450px) {
     .search__button {
         width: 100%;
         height: 56px;

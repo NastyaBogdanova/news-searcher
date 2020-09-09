@@ -1,0 +1,11 @@
+.search__form-error {
+    position: absolute;
+    left: 24px;
+    bottom: -40px;
+    color: white;
+}
+@media screen and (max-width: 450px) {
+    .search__form-error {
+        top: -40px;
+    }
+}

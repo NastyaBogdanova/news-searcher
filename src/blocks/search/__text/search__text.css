@@ -9,7 +9,7 @@
         margin: 0 0 24px 0;
     }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 450px) {
     .search__text {
         font-size: 20px;
         line-height: 26px;
