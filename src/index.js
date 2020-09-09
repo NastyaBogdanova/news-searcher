@@ -1,2 +1,3 @@
 import "./pages/index/index.css";
-console.log("This is index page");
+
+console.log("This is index page!");
