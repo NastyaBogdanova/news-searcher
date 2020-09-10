@@ -8,9 +8,10 @@ export class NewsCard {
       this.source = source;
     }
   
-    __createMarkup() {
+    createMarkup() {
         const markup = `
-        <a class="news__element" href="">
+        <div class="news__element">
+        <a class="news__link" href="#" target="_blank"></a>
         <div class="news__element-container">
           <img class="news__image" src="" alt="Картинка новости">
           <p class="news__date"></p>
@@ -18,7 +19,7 @@ export class NewsCard {
           <p class="news__text"></p>
         </div>
         <p class="news__source"></p>
-      </a>
+      </div>
       `;
 
       const element = document.createElement('div');
@@ -28,9 +29,9 @@ export class NewsCard {
     }
 
     addData() {
-        const newsCard = __createMarkup();
+        const newsCard = this.createMarkup();
 
-        newsCard.querySelector(".news__element").href = this.link;
+        newsCard.querySelector(".news__link").href = this.link;
         newsCard.querySelector(".news__image").src = this.image;
         newsCard.querySelector(".news__date").textContent = this.date;
         newsCard.querySelector(".news__name").textContent = this.name;

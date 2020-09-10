@@ -11,7 +11,7 @@ export class SearchInput {
       } else {
         errorElem.textContent = " ";
       }
-    } // использовать эту функцию перед сабмитом
+    } // использовать эту функцию перед сабмитом. Если слово введено, осуществляется запрос к API. слово нужно передать в апи
 
     setValidateListener() {
         this.form.addEventListener("input", () => this._validate(this.form));
@@ -23,4 +23,5 @@ export class SearchInput {
             this._validate(this.form);
         });
     }
+    
 }

@@ -10,6 +10,7 @@
 @import url(./__name/news__name.css);
 @import url(./__text/news__text.css);
 @import url(./__source/news__source.css);
+@import url(./__link/news__link.css);
 
 .news {
     display: none;
