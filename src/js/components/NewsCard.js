@@ -12,6 +12,7 @@ export class NewsCard {
         const markup = `
         <div class="news__element">
         <a class="news__link" href="#" target="_blank"></a>
+        <div class="news__element-gradient"></div>
         <div class="news__element-container">
           <img class="news__image" src="" alt="Картинка новости">
           <p class="news__date"></p>
@@ -28,12 +29,18 @@ export class NewsCard {
       return element.firstElementChild;
     }
 
+    __fixDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const newDate = new Date(date).toLocaleString('ru-RU', options);
+      return newDate.slice(0, -2);
+    }
+
     addData() {
         const newsCard = this.createMarkup();
-
+        
         newsCard.querySelector(".news__link").href = this.link;
         newsCard.querySelector(".news__image").src = this.image;
-        newsCard.querySelector(".news__date").textContent = this.date;
+        newsCard.querySelector(".news__date").textContent = this.__fixDate(this.date);
         newsCard.querySelector(".news__name").textContent = this.name;
         newsCard.querySelector(".news__text").textContent = this.text;
         newsCard.querySelector(".news__source").textContent = this.source;

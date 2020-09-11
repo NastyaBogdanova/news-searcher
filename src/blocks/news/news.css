@@ -11,6 +11,7 @@
 @import url(./__text/news__text.css);
 @import url(./__source/news__source.css);
 @import url(./__link/news__link.css);
+@import url(./__element-gradient/news__element-gradient.css);
 
 .news {
     display: none;

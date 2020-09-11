@@ -1,11 +1,15 @@
 .news__element-container {
     max-height: 522px;
     overflow: hidden;
-    border: 1px solid red;
 }
 
 @media screen and (max-width: 768px) {
     .news__element-container {
         max-height: 372px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .news__element-container {
+        max-height: 420px;
     }
 }

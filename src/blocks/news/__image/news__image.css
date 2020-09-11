@@ -2,6 +2,7 @@
     width: 100%;
     height: 272px;
     background-size: cover;
+    display: flex;
 }
 
 @media screen and (max-width: 1220px) {

@@ -6,6 +6,9 @@ export class NewsCardList {
       addNewsCard(newsCard) {
         this.container.appendChild(newsCard);
       }
+
+      removeCards() {
+      }
     
       render() {
     

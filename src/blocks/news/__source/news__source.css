@@ -7,7 +7,9 @@
     text-transform: uppercase;
     color: #B6BCBF;
     margin: 0 24px 24px;
+    position: relative;
 }
+
 @media screen and (max-width: 1024px) {
     .news__source {
         margin: 0 16px 16px;
