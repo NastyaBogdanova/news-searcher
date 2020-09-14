@@ -12,6 +12,8 @@
 @import url(../../blocks/author/author.css);
 @import url(../../blocks/footer/footer.css);
 @import url(../../blocks/main/main.css);
+@import url(../../blocks/request-error/request-error.css);
+@import url(../../blocks/request-error/_is-opened/request-error_is-opened.css);
 
 body {
     font-family: Roboto, Helvetica, sans-serif;
