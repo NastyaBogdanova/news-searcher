@@ -8,9 +8,9 @@ export class NewsCardList {
       }
 
       removeCards() {
+        while (this.container.firstChild) {
+          this.container.removeChild(this.container.firstChild);
+        }
       }
-    
-      render() {
-    
-      }
+
 }

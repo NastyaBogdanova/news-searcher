@@ -1,15 +1,18 @@
 export class NewsApi {
-    constructor(url) {
+    constructor(url, apiKey, callback) {
         this.url = url;
+        this.apiKey = apiKey;
+        this.callback = callback;
       }
     
-      getNews() {
-        fetch(this.url).then((res) => {
+      getNews(input) {
+        return fetch(this.url + `qInTitle=${input}&` + this.apiKey)
+        .then((res) => {
             if (!res.ok) {
-                return Promise.reject(`Ошибка: ${res.status}`);
+              this.callback();
+              return Promise.reject(`Ошибка: ${res.status}`);
               }
-              console.log(res.json());
               return res.json();
-        });
+        })
       }
 }
