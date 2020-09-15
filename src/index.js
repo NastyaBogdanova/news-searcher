@@ -58,14 +58,17 @@ document.forms.search.addEventListener("submit", () => {
                 document.querySelector(".news").classList.add("news_is-opened");
                 const articles = localStorage.getItem('news');
                 const news = JSON.parse(articles);
+                const arr = news.slice(0, 3);
+                localStorage.setItem('newsList', JSON.stringify(arr));
                 console.log(news);
-                for(let i = 0; i < 3; i++) {
-                    let item = news[i];
+                arr.forEach(item => {
                     const newsCard = new NewsCard(item.url, item.urlToImage, item.publishedAt, item.title, item.description, item.source.name);
                     newsCardList.addNewsCard(newsCard.addData());
-                    hideShowMoreButton(result.articles.length);
-                }
+                    hideShowMoreButton(news.length);
+                });
+                
                 count = 3;
+
             } else {
                 document.querySelector(".not-found").classList.add("not-found_is-opened");
             }
@@ -77,6 +80,8 @@ document.forms.search.addEventListener("submit", () => {
         console.log("Нужно ввести ключевое слово");
     }
   });
+
+ 
 
 const news = document.querySelector(".news");
 
@@ -108,13 +113,41 @@ news.querySelector(".news__show-more").addEventListener("click", () => {
     const news = JSON.parse(articles);
         
     let arr = func(news);
+
+    const newslist = localStorage.getItem('newsList');
+    const newslistParse =  JSON.parse(newslist);
+
     console.log(arr);
     arr.forEach(item => {
         const newsCard = new NewsCard(item.url, item.urlToImage, item.publishedAt, item.title, item.description, item.source.name);
         newsCardList.addNewsCard(newsCard.addData());
         hideShowMoreButton(news.length);
+        return newslistParse.push(item);
     });
-
+    localStorage.setItem('newsList', JSON.stringify(newslistParse));
 });
 
-//сохранять данные при возвращении на страницу
+function storage() {
+    if (localStorage.newsList) {
+console.log("хранилище не пустое");
+const articles = localStorage.getItem('newsList');
+                const news = JSON.parse(articles);
+                news.forEach(item => {
+                    const newsCard = new NewsCard(item.url, item.urlToImage, item.publishedAt, item.title, item.description, item.source.name);
+                    newsCardList.addNewsCard(newsCard.addData());
+                });
+                document.querySelector(".news").classList.add("news_is-opened");
+
+                const ho = localStorage.getItem('news');
+    const hoho =  JSON.parse(ho);
+    hideShowMoreButton(hoho.length);
+    } else {
+      console.log("хранилище пустое");
+    }
+}
+storage();
+
+
+
+//сохранять данные при возвращении на страницу и отображать содержимое newlist
+//поля формы заблокированы во время отправки запросов.
