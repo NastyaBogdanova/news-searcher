@@ -1,15 +1,15 @@
 export class NewsCard {
-    constructor(link, image, date, name, text, source) {
-      this.link = link;
-      this.image = image;
-      this.date = date;
-      this.name = name;
-      this.text = text;
-      this.source = source;
-    }
-  
-    createMarkup() {
-        const markup = `
+  constructor(link, image, date, name, text, source) {
+    this.link = link;
+    this.image = image;
+    this.date = date;
+    this.name = name;
+    this.text = text;
+    this.source = source;
+  }
+
+  __createMarkup() {
+    const markup = `
         <div class="news__element">
         <a class="news__link" href="#" target="_blank"></a>
         <div class="news__element-gradient"></div>
@@ -23,28 +23,30 @@ export class NewsCard {
       </div>
       `;
 
-      const element = document.createElement('div');
-      element.insertAdjacentHTML('afterbegin', markup);
+    const element = document.createElement("div");
+    element.insertAdjacentHTML("afterbegin", markup);
 
-      return element.firstElementChild;
-    }
+    return element.firstElementChild;
+  }
 
-    __fixDate(date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      const newDate = new Date(date).toLocaleString('ru-RU', options);
-      return newDate.slice(0, -2);
-    }
+  __fixDate(date) {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const newDate = new Date(date).toLocaleString("ru-RU", options);
+    return newDate.slice(0, -2);
+  }
 
-    addData() {
-        const newsCard = this.createMarkup();
-        
-        newsCard.querySelector(".news__link").href = this.link;
-        newsCard.querySelector(".news__image").src = this.image;
-        newsCard.querySelector(".news__date").textContent = this.__fixDate(this.date);
-        newsCard.querySelector(".news__name").textContent = this.name;
-        newsCard.querySelector(".news__text").textContent = this.text;
-        newsCard.querySelector(".news__source").textContent = this.source;
+  addData() {
+    const newsCard = this.__createMarkup();
 
-        return newsCard;
-    }
+    newsCard.querySelector(".news__link").href = this.link;
+    newsCard.querySelector(".news__image").src = this.image;
+    newsCard.querySelector(".news__date").textContent = this.__fixDate(
+      this.date
+    );
+    newsCard.querySelector(".news__name").textContent = this.name;
+    newsCard.querySelector(".news__text").textContent = this.text;
+    newsCard.querySelector(".news__source").textContent = this.source;
+
+    return newsCard;
+  }
 }
