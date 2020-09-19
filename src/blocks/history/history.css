@@ -22,6 +22,7 @@
 @import url(./__bullets/history__bullets.css);
 @import url(./__bullet/history__bullet.css);
 @import url(./__bullet/_active/history__bullet_active.css);
+@import url(../glide/glide.core.css);
 
 .history {
     background: #F5F6F7;

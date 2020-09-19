@@ -14,6 +14,5 @@
     outline: none; 
 }
 .history__bullet:hover, .history__bullet:focus {
-    border: 2px solid rgb(49, 46, 46);
-    background-color: #D1D2D6; 
+    background-color: #1A1B22; 
 }

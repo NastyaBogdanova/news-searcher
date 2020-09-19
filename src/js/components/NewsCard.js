@@ -32,7 +32,7 @@ export class NewsCard {
   __fixDate(date) {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const newDate = new Date(date).toLocaleString("ru-RU", options);
-    return newDate.slice(0, -2);
+    return newDate.slice( -2);
   }
 
   addData() {

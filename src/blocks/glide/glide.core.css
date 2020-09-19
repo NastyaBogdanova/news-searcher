@@ -3,8 +3,10 @@
   width: 100%;
   box-sizing: border-box; 
 }
-  .glide__track {
-  }
+.glide * {
+  box-sizing: inherit; }
+.glide__track {
+  overflow: hidden; }
   .glide__slides {
     position: relative;
     width: 100%;
@@ -48,4 +50,6 @@
   .glide--rtl {
     direction: rtl; 
   }
- 
+ .glide__controls:focus {
+  outline: none; 
+}

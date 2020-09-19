@@ -2,6 +2,7 @@ import "./pages/index/index.css";
 
 import { apiKey } from "./js/constants/api-key.js";
 import { input, preloader, requestError, newsBlock, notFound, API_URL } from "./js/constants/index-constants.js";
+import { renderNewsCards, openNewsBlock, handleShowMoreButton } from "./js/utils/utils.js";
 import { SearchInput } from "./js/components/SearchInput.js";
 import { NewsCard } from "./js/components/NewsCard.js";
 import { NewsCardList } from "./js/components/NewsCardList.js";
@@ -20,12 +21,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
   const searchForm = new SearchInput(document.forms.search, searchFormSubmit);
   const newsApi = new NewsApi(url, apiKey, openRequestError);
   const newsCardList = new NewsCardList(document.querySelector(".news__list"));
-  const dataStorage = new DataStorage(
-    renderNewsCards,
-    openNewsBlock,
-    handleShowMoreButton,
-    input
-  );
+  const dataStorage = new DataStorage();
   const showMoreButton = new ShowMoreButton(
     newsBlock.querySelector(".news__show-more"),
     showMoreButtonClick
@@ -35,10 +31,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
     preloader.classList.remove("preloader_is-opened");
     requestError.classList.add("request-error_is-opened");
   }
-  function openNewsBlock() {
-    newsBlock.classList.add("news_is-opened");
-  }
-
+  
   function renderNewsCards(arr) {
     arr.forEach((item) => {
       const newsCard = new NewsCard(
@@ -53,16 +46,20 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
     });
   }
 
-  function setDate() {
-    let dateFrom = new Date();
-    dateFrom.setDate(dateFrom.getDate() - 7);
-    return dateFrom.toISOString();
+  function openNewsBlock() {
+    newsBlock.classList.add("news_is-opened");
   }
 
   function handleShowMoreButton(item) {
     if (item === newsCardList.container.children.length) {
       showMoreButton.hideButton();
     }
+  }
+  
+  function setDate() {
+    let dateFrom = new Date();
+    dateFrom.setDate(dateFrom.getDate() - 7);
+    return dateFrom.toISOString();
   }
 
   function searchFormSubmit() {
@@ -143,8 +140,23 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
     dataStorage.setItem("newsList", newslist);
   }
 
+  function renderLastSearchResults() {
+    if (dataStorage.checkLocalStorage()) {
+      const searchInput = dataStorage.getItem("input");
+      input.value = searchInput;
+
+      const newslist = dataStorage.getItem("newsList");
+      renderNewsCards(newslist);
+
+      openNewsBlock();
+
+      const articles = dataStorage.getItem("news");
+      handleShowMoreButton(articles.length);
+    }
+  }
+  renderLastSearchResults();
+
   searchForm.setValidateListener();
   searchForm.setSumbitListener();
   showMoreButton.setClickListener();
-  dataStorage.render();
 })();

@@ -20,18 +20,7 @@ export class DataStorage {
     localStorage.clear();
   }
 
-  render() {
-    if (localStorage.newsList) {
-      const searchInput = this.getItem("input");
-      this.input.value = searchInput;
-
-      const newslist = this.getItem("newsList");
-      this.renderCallback(newslist);
-
-      this.openCallback();
-
-      const articles = this.getItem("news");
-      this.buttonCallback(articles.length);
-    }
+  checkLocalStorage() {
+      return localStorage.newsList;
   }
 }
