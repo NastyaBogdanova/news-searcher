@@ -1,11 +1,12 @@
 import "../pages/about/about.css";
+import "../blocks/glide/glide.core.css";
 
 import { CommitCard } from "../js/components/CommitCard.js";
 import { CommitCardList } from "../js/components/CommitCardList.js";
 import { GithubApi } from "../js/modules/GithubApi.js";
 import Glide from '@glidejs/glide'
 
-const commitCardList = new CommitCardList(document.querySelector(".history__slides"));
+const commitCardList = new CommitCardList(document.querySelector(".glide__slides"));
 const gitHubApi = new GithubApi(renderCommitCards);
 
 function renderCommitCards(arr) {
@@ -28,7 +29,7 @@ const glide = new Glide('.glide', {
     type: 'slider',
     startAt: 0,
     focusAt: 0,
-    perView: 4,
+    perView: 3,
     peek: 88,
     braekpoints: {
       

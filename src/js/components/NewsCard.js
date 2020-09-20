@@ -32,7 +32,7 @@ export class NewsCard {
   __fixDate(date) {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const newDate = new Date(date).toLocaleString("ru-RU", options);
-    return newDate.slice( -2);
+    return newDate.slice(0, -2);
   }
 
   addData() {
@@ -40,9 +40,7 @@ export class NewsCard {
 
     newsCard.querySelector(".news__link").href = this.link;
     newsCard.querySelector(".news__image").src = this.image;
-    newsCard.querySelector(".news__date").textContent = this.__fixDate(
-      this.date
-    );
+    newsCard.querySelector(".news__date").textContent = this.__fixDate(this.date);
     newsCard.querySelector(".news__name").textContent = this.name;
     newsCard.querySelector(".news__text").textContent = this.text;
     newsCard.querySelector(".news__source").textContent = this.source;

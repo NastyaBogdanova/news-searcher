@@ -19,7 +19,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
   let count = 3;
 
   const searchForm = new SearchInput(document.forms.search, searchFormSubmit);
-  const newsApi = new NewsApi(url, apiKey, openRequestError);
+  const newsApi = new NewsApi(url, apiKey, openRequestError, saveNewsInTitles);
   const newsCardList = new NewsCardList(document.querySelector(".news__list"));
   const dataStorage = new DataStorage();
   const showMoreButton = new ShowMoreButton(
@@ -80,6 +80,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
         .then((result) => {
           dataStorage.setItem("news", result.articles);
           dataStorage.setItem("input", input.value);
+          dataStorage.setItem("totalResults", result.totalResults);
           preloader.classList.remove("preloader_is-opened");
           if (!(result.articles.length === 0)) {
             const articles = dataStorage.getItem("news");
@@ -89,6 +90,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
             handleShowMoreButton(articles.length);
             openNewsBlock();
             count = 3;
+            newsApi.getNewsInTitles(input.value);
           } else {
             notFound.classList.add("not-found_is-opened");
           }
@@ -155,6 +157,10 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
     }
   }
   renderLastSearchResults();
+
+  function saveNewsInTitles(item) {
+    dataStorage.setItem("newsInTitles", item);
+  }
 
   searchForm.setValidateListener();
   searchForm.setSumbitListener();
