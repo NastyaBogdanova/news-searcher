@@ -58,7 +58,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
   
   function setDate() {
     let dateFrom = new Date();
-    dateFrom.setDate(dateFrom.getDate() - 7);
+    dateFrom.setDate(dateFrom.getDate() - 6);
     return dateFrom.toISOString();
   }
 

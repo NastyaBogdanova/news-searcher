@@ -28,6 +28,7 @@ function renderNewsInTitles() {
 }
 renderNewsInTitles();
 
+
 let todayDate = new Date();
 
 function setDate() {
@@ -58,7 +59,26 @@ const fixedDate = fixDate(dateFrom);
         item.textContent = fixedDate + `, ${getWeekDay(dateFrom)}`;
     })
   }
-  markupDates();
+  markupDates(); //здесь должна возвращаться дата и передаваться в функцию фильтра
 
-  
+function filerDates(date) {
+  const articles = dataStorage.getItem("news");
+  const datesArr = articles.map(function (item) {
+    return item.publishedAt.substr(0,10);
+  });
+  console.log(datesArr);
+
+const dates = datesArr.filter(function (item) {
+  return item === date; // для значений, которые делятся на 2 без остатка возвращаем true, таким образом в новый массив попадут только чётные элементы
+});
+
+console.log(dates);
+
+}
+filerDates(todayDate.toISOString().substr(0,10));
+console.log(todayDate.toISOString().substr(0,10));
+
+
+  //фильтр по дате
+  //для каждоый даты отфильтровать и отрисовать 
   
