@@ -2,7 +2,6 @@ import "./pages/index/index.css";
 
 import { apiKey } from "./js/constants/api-key.js";
 import { input, preloader, requestError, newsBlock, notFound, API_URL } from "./js/constants/index-constants.js";
-import { renderNewsCards, openNewsBlock, handleShowMoreButton } from "./js/utils/utils.js";
 import { SearchInput } from "./js/components/SearchInput.js";
 import { NewsCard } from "./js/components/NewsCard.js";
 import { NewsCardList } from "./js/components/NewsCardList.js";
@@ -31,7 +30,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
     preloader.classList.remove("preloader_is-opened");
     requestError.classList.add("request-error_is-opened");
   }
-  
+
   function renderNewsCards(arr) {
     arr.forEach((item) => {
       const newsCard = new NewsCard(
@@ -55,7 +54,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
       showMoreButton.hideButton();
     }
   }
-  
+
   function setDate() {
     let dateFrom = new Date();
     dateFrom.setDate(dateFrom.getDate() - 6);
