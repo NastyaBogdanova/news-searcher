@@ -7,6 +7,9 @@
     border: none;
     border-radius: 100px;
 }
+.search__input:disabled {
+    opacity: 0.5;
+}
 @media screen and (max-width: 414px) {
     .search__input {
         width: 100%;

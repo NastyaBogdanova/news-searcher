@@ -1,37 +1,41 @@
 import "../pages/analytics/analytics.css";
 
+import { changeTodayDate, firstLetterToUpperCase } from "../js/utils/utils.js";
 import { DataStorage } from "../js/modules/DataStorage.js";
 import { Statistics } from "../js/components/Statistics.js";
-import { title, newsAtWeek, newsInTitles, diagramDates, diagramPercents } from "../js/constants/analytics-constants.js";
 
 (function () {
+  const title = document.querySelector(".info__news-name");
+  const newsAtWeek = document.querySelector(".info__news-week");
+  const newsInTitles = document.querySelector(".info__news-titles");
+  const diagramDates = document.querySelectorAll(".diagram__date");
+  const diagramPercents = document.querySelectorAll(".diagram__percent");
   const dataStorage = new DataStorage();
 
   const articles = dataStorage.getItem("news");
-  const totalResults = dataStorage.getItem("totalResults");
 
   const statistics = new Statistics(
     articles,
     diagramDates,
     diagramPercents,
-    totalResults
+    changeTodayDate
   );
 
   function renderTitle() {
     const input = dataStorage.getItem("input");
-    title.textContent = input;
+    title.textContent = firstLetterToUpperCase(input);
   }
   renderTitle();
 
   function renderNewsAtWeek() {
-    const totalResults = dataStorage.getItem("totalResults");
-    newsAtWeek.textContent = totalResults;
+    const storageResults = dataStorage.getItem("totalResults");
+    newsAtWeek.textContent = storageResults;
   }
   renderNewsAtWeek();
 
   function renderNewsInTitles() {
-    const totalResults = dataStorage.getItem("newsInTitles");
-    newsInTitles.textContent = totalResults;
+    const storageResults = dataStorage.getItem("newsInTitles");
+    newsInTitles.textContent = storageResults;
   }
   renderNewsInTitles();
 

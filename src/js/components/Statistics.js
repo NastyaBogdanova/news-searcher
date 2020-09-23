@@ -1,29 +1,23 @@
 export class Statistics {
-  constructor(articles, diagramDates, diagramPercents, totalResults) {
+  constructor(articles, diagramDates, diagramPercents, callback) {
     this.articles = articles;
     this.diagramDates = diagramDates;
     this.diagramPercents = diagramPercents;
-    this.totalResults = totalResults;
+    this.callback = callback;
   }
 
-  __changeTodayDate() {
-    const dateFrom = new Date();
-    dateFrom.setDate(dateFrom.getDate() - 7);
-    return dateFrom;
-  }
-
-  __fixDate(date) {
+  _fixDate(date) {
     const options = { day: "numeric" };
     const fixedDate = new Date(date).toLocaleString("ru-RU", options);
     return fixedDate;
   }
 
-  __getWeekDay(date) {
+  _getWeekDay(date) {
     const days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
     return days[date.getDay()];
   }
 
-  __filterDates(date) {
+  _filterDates(date) {
     const datesArr = this.articles.map(function (item) {
       return item.publishedAt.substr(0, 10);
     });
@@ -33,28 +27,30 @@ export class Statistics {
     return filteredDates;
   }
 
-  __markupDates() {
-    const dateFrom = this.__changeTodayDate();
+  _markupDates() {
+    const dateFrom = this.callback();
     const percentArr = [];
     this.diagramDates.forEach((item) => {
-      dateFrom.setDate(dateFrom.getDate() + 1);
-      dateFrom.toISOString();
-      const fixedDate = this.__fixDate(dateFrom);
-      item.textContent = fixedDate + `, ${this.__getWeekDay(dateFrom)}`;
-      const filteredArr = this.__filterDates(
+      const fixedDate = this._fixDate(dateFrom);
+      item.textContent = fixedDate + `, ${this._getWeekDay(dateFrom)}`;
+      const filteredArr = this._filterDates(
         dateFrom.toISOString().substr(0, 10)
       );
       percentArr.push(filteredArr.length);
+      dateFrom.setDate(dateFrom.getDate() + 1);
     });
     return percentArr;
   }
 
   markupPercents() {
-    const percentArr = this.__markupDates();
+    const percentArr = this._markupDates();
     for (let i = 0; i < percentArr.length; i++) {
-      const percent = (percentArr[i] * 100) / this.totalResults;
+      const percent = (percentArr[i] * 100) / this.articles.length;
       this.diagramPercents[i].textContent = Math.round(percent);
-      this.diagramPercents[i].style.width = percent + "%";
+        this.diagramPercents[i].style.width = percent + "%";
+      if (percent === 0) {
+        this.diagramPercents[i].style.background = 'transparent';
+      }
     }
   }
 }

@@ -1,15 +1,16 @@
 export class ShowMoreButton {
-    constructor(button, callback) {
+    constructor(button, callback, className) {
       this.button = button;
       this.callback = callback;
+      this.className = className;
     }
   
     hideButton() {
-      this.button.classList.add("news__show-more_is-closed");
+      this.button.classList.add(this.className);
     }
   
     openButton() {
-      this.button.classList.remove("news__show-more_is-closed");
+      this.button.classList.remove(this.className);
     }
   
     setClickListener() {

@@ -1,10 +1,10 @@
-export class CommitCardList {
+export class CardList {
     constructor(container) {
       this.container = container;
     }
   
-    addCommitCard(commitCard) {
-      this.container.appendChild(commitCard);
+    addCards(card) {
+      this.container.appendChild(card);
     }
   
     removeCards() {

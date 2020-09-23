@@ -1,11 +1,18 @@
 export class GithubApi {
-    constructor(callback) {
+    constructor(url, callback) {
+        this.url = url;
         this.callback = callback;
       }
-  
+
+    openRequestError() {
+        const requestError = document.querySelector(".request-error");
+        requestError.classList.add("request-error_is-opened");
+      }
+
     getCommits() {
-      return fetch('https://api.github.com/repos/NastyaBogdanova/newssearcher/commits?per_page=20').then((res) => {
+      return fetch(this.url).then((res) => {
         if (!res.ok) {
+          this.openRequestError();
           return Promise.reject(`Ошибка: ${res.status}`);
         }
         return res.json();
@@ -13,6 +20,9 @@ export class GithubApi {
       .then((result) => {
         this.callback(result);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err)
+      this.openRequestError();
+    });
 }
     }

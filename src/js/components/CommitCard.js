@@ -1,5 +1,6 @@
 export class CommitCard {
-    constructor(name, mail, date, message, image) {
+    constructor(callback, name, mail, date, message, image) {
+        this.callback = callback;
         this.name = name;
         this.mail = mail;
         this.date = date;
@@ -7,7 +8,7 @@ export class CommitCard {
         this.image = image;
       }
     
-      __createMarkup() {
+      _createMarkup() {
         const markup = `
         <li class="history__slide glide__slide">
         <div class="history__commit">
@@ -29,19 +30,11 @@ export class CommitCard {
     
         return element.firstElementChild;
       }
-
-      __fixDate(date) {
-        const options = { year: "numeric", month: "long", day: "numeric" };
-        const newDate = new Date(date).toLocaleString("ru-RU", options);
-        return newDate.slice(0, -2);
-      }
     
       addData() {
-        const commitCard = this.__createMarkup();
+        const commitCard = this._createMarkup();
     
-        commitCard.querySelector(".history__commit-date").textContent = this.__fixDate(
-          this.date
-        );
+        commitCard.querySelector(".history__commit-date").textContent = this.callback(this.date);
         commitCard.querySelector(".history__author-photo").src = this.image;
         commitCard.querySelector(".history__author-name").textContent = this.name;
         commitCard.querySelector(".history__author-mail").textContent = this.mail;

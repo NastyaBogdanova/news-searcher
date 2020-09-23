@@ -1,5 +1,6 @@
 export class NewsCard {
-  constructor(link, image, date, name, text, source) {
+  constructor(callback, link, image, date, name, text, source) {
+    this.callback = callback;
     this.link = link;
     this.image = image;
     this.date = date;
@@ -8,13 +9,13 @@ export class NewsCard {
     this.source = source;
   }
 
-  __createMarkup() {
+  _createMarkup() {
     const markup = `
         <div class="news__element">
         <a class="news__link" href="#" target="_blank"></a>
         <div class="news__element-gradient"></div>
         <div class="news__element-container">
-          <img class="news__image" src="" alt="Картинка новости">
+          <div class="news__image"></div>
           <p class="news__date"></p>
           <h3 class="news__name"></h3>
           <p class="news__text"></p>
@@ -29,18 +30,20 @@ export class NewsCard {
     return element.firstElementChild;
   }
 
-  __fixDate(date) {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const newDate = new Date(date).toLocaleString("ru-RU", options);
-    return newDate.slice(0, -2);
+  _fixImage(url) {
+    if(url === null) {
+      return 'https://i.pinimg.com/originals/8a/eb/d8/8aebd875fbddd22bf3971c3a7159bdc7.png';
+    } else {
+      return url;
+    }
   }
 
   addData() {
-    const newsCard = this.__createMarkup();
+    const newsCard = this._createMarkup();
 
     newsCard.querySelector(".news__link").href = this.link;
-    newsCard.querySelector(".news__image").src = this.image;
-    newsCard.querySelector(".news__date").textContent = this.__fixDate(this.date);
+    newsCard.querySelector(".news__image").style.backgroundImage = `url(${this._fixImage(this.image)})`;
+    newsCard.querySelector(".news__date").textContent = this.callback(this.date);
     newsCard.querySelector(".news__name").textContent = this.name;
     newsCard.querySelector(".news__text").textContent = this.text;
     newsCard.querySelector(".news__source").textContent = this.source;

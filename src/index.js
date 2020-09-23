@@ -1,39 +1,49 @@
 import "./pages/index/index.css";
 
-import { apiKey } from "./js/constants/api-key.js";
-import { input, preloader, requestError, newsBlock, notFound, API_URL } from "./js/constants/index-constants.js";
+import { API_KEY } from "./js/constants/api-key.js";
+import { SEARCH_URL, NEWS_START_QUANTITY, THREE_NEWS } from "./js/constants/constants.js";
+import { fixDate } from "./js/utils/utils.js";
 import { SearchInput } from "./js/components/SearchInput.js";
 import { NewsCard } from "./js/components/NewsCard.js";
-import { NewsCardList } from "./js/components/NewsCardList.js";
+import { CardList } from "./js/components/CardList.js";
 import { NewsApi } from "./js/modules/NewsApi.js";
 import { DataStorage } from "./js/modules/DataStorage.js";
 import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
 
 (function () {
-  const url =
-    `${API_URL}/v2/everything?` +
-    `pageSize=100&` +
-    `from=${setDate()}&` +
-    `sortBy=publishedAt&`;
-  let count = 3;
+  const input = document.querySelector(".search__input");
+  const searchButton = document.querySelector(".search__button");
+  const preloader = document.querySelector(".preloader");
+  const requestError = document.querySelector(".request-error");
+  const newsBlock = document.querySelector(".news");
+  const notFound = document.querySelector(".not-found");
+  let newsCounter = NEWS_START_QUANTITY;
 
   const searchForm = new SearchInput(document.forms.search, searchFormSubmit);
-  const newsApi = new NewsApi(url, apiKey, openRequestError, saveNewsInTitles);
-  const newsCardList = new NewsCardList(document.querySelector(".news__list"));
+  const newsApi = new NewsApi(SEARCH_URL, API_KEY, openRequestError, saveNewsInTitles);
+  const newsCardList = new CardList(document.querySelector(".news__list"));
   const dataStorage = new DataStorage();
   const showMoreButton = new ShowMoreButton(
     newsBlock.querySelector(".news__show-more"),
-    showMoreButtonClick
+    showMoreButtonClick,
+    "news__show-more_is-closed"
   );
+
+function handleSearchFormElements(boolean) {
+  input.disabled = boolean;
+  searchButton.disabled = boolean;
+}
 
   function openRequestError() {
     preloader.classList.remove("preloader_is-opened");
+    handleSearchFormElements(false);
     requestError.classList.add("request-error_is-opened");
   }
 
   function renderNewsCards(arr) {
     arr.forEach((item) => {
       const newsCard = new NewsCard(
+        fixDate,
         item.url,
         item.urlToImage,
         item.publishedAt,
@@ -41,7 +51,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
         item.description,
         item.source.name
       );
-      newsCardList.addNewsCard(newsCard.addData());
+      newsCardList.addCards(newsCard.addData());
     });
   }
 
@@ -53,12 +63,6 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
     if (item === newsCardList.container.children.length) {
       showMoreButton.hideButton();
     }
-  }
-
-  function setDate() {
-    let dateFrom = new Date();
-    dateFrom.setDate(dateFrom.getDate() - 6);
-    return dateFrom.toISOString();
   }
 
   function searchFormSubmit() {
@@ -73,7 +77,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
       notFound.classList.remove("not-found_is-opened");
       requestError.classList.remove("request-error_is-opened");
       preloader.classList.add("preloader_is-opened");
-
+      handleSearchFormElements(true);
       newsApi
         .getNews(input.value)
         .then((result) => {
@@ -81,14 +85,15 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
           dataStorage.setItem("input", input.value);
           dataStorage.setItem("totalResults", result.totalResults);
           preloader.classList.remove("preloader_is-opened");
+          handleSearchFormElements(false);
           if (!(result.articles.length === 0)) {
             const articles = dataStorage.getItem("news");
-            const arr = articles.slice(0, 3);
+            const arr = articles.slice(0, NEWS_START_QUANTITY);
+            newsCounter = NEWS_START_QUANTITY;
             dataStorage.setItem("newsList", arr);
             renderNewsCards(arr);
             handleShowMoreButton(articles.length);
             openNewsBlock();
-            count = 3;
             newsApi.getNewsInTitles(input.value);
           } else {
             notFound.classList.add("not-found_is-opened");
@@ -96,6 +101,8 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
         })
         .catch((err) => {
           console.log(err);
+          openRequestError();
+          handleSearchFormElements(false);
         });
     } else {
       console.log("Нужно ввести ключевое слово");
@@ -103,18 +110,18 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
   }
 
   function showMoreNews(arr) {
-    if (count < arr.length - (arr.length % 3)) {
-      const output = [arr[count], arr[count + 1], arr[count + 2]];
-      count = count + 3;
+    if (newsCounter < arr.length - (arr.length % THREE_NEWS)) {
+      const output = [arr[newsCounter], arr[newsCounter + 1], arr[newsCounter + 2]];
+      newsCounter = newsCounter + THREE_NEWS;
       return output;
     }
 
-    if (arr.length % 3 == 2) {
-      return [arr[count], arr[count + 1]];
+    if (arr.length % THREE_NEWS == 2) {
+      return [arr[newsCounter], arr[newsCounter + 1]];
     }
 
-    if (arr.length % 3 == 1) {
-      return [arr[count]];
+    if (arr.length % THREE_NEWS == 1) {
+      return [arr[newsCounter]];
     }
   }
 
@@ -126,6 +133,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
 
     arr.forEach((item) => {
       const newsCard = new NewsCard(
+        fixDate,
         item.url,
         item.urlToImage,
         item.publishedAt,
@@ -133,7 +141,7 @@ import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
         item.description,
         item.source.name
       );
-      newsCardList.addNewsCard(newsCard.addData());
+      newsCardList.addCards(newsCard.addData());
       return newslist.push(item);
     });
 
