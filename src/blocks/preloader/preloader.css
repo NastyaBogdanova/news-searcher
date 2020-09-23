@@ -2,7 +2,6 @@
 @import url(./__text/preloader__text.css);
 
 .preloader {
-    display: none;
     background: #F5F6F7;
     padding: 80px 0;
 }

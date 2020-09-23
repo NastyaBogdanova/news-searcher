@@ -6,7 +6,7 @@ export class GithubApi {
 
     openRequestError() {
         const requestError = document.querySelector(".request-error");
-        requestError.classList.add("request-error_is-opened");
+        requestError.classList.remove("root__hide");
       }
 
     getCommits() {

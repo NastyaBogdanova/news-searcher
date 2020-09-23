@@ -1,5 +1,6 @@
 @import url(../../vendor/fonts.css);
 @import url(../../vendor/normalize.css);
+@import url(../../blocks/root/root.css);
 @import url(../../blocks/header/header.css);
 @import url(../../blocks/header/_theme_white/header_theme_white.css);
 @import url(../../blocks/header/__link/_black-active/header__link_black-active.css);
@@ -11,7 +12,6 @@
 @import url(../../blocks/technologies/technologies.css);
 @import url(../../blocks/history/history.css);
 @import url(../../blocks/request-error/request-error.css);
-@import url(../../blocks/request-error/_is-opened/request-error_is-opened.css);
 
 body {
     font-family: Roboto, Helvetica, sans-serif;

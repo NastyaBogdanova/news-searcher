@@ -10,7 +10,7 @@
   <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
-<body>
+<body class="root">
   <header class="header header_theme_white">
     <a class="header__logo-link" href="./index.html"><img class="header__logo" src="<%=require('../../images/NewsAnalyzer-black.svg')%>" alt="NewsAnalyzer logo"></a>
     <div class="header__links">
@@ -124,7 +124,7 @@
       </div>
       <a class="history__github-button" href="https://github.com/NastyaBogdanova" target="_blank">Открыть в  Github</a>
     </section>
-    <section class="request-error">
+    <section class="request-error root__hide">
       <h2 class="request-error__title">Во время запроса произошла ошибка</h2>
       <p class="request-error__text">Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.</p>
     </section>

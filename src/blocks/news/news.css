@@ -15,7 +15,6 @@
 @import url(./__show-more/_is-closed/news__show-more_is-closed.css);
 
 .news {
-    display: none;
     background: #F5F6F7;
     padding: 80px 0;
 }

@@ -10,7 +10,7 @@
   <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
-<body>
+<body class="root">
   <div class="background">
     <header class="header">
         <img class="header__logo" src="<%=require('../../images/NewsAnalyzer.svg')%>" alt="NewsAnalyzer logo">
@@ -32,20 +32,20 @@
       </section>
   </div>
   <main class="main">
-    <section class="preloader">
+    <section class="preloader root__hide">
         <i class="preloader__elem"></i>
         <p class="preloader__text">Идет поиск новостей...</p>
     </section>
-    <section class="not-found">
+    <section class="not-found root__hide">
       <img class="not-found__image" src="<%=require('../../images/not-found.svg')%>" alt="Ничего не найдено">
       <h2 class="not-found__title">Ничего не найдено</h2>
       <p class="not-found__text">К сожалению, по вашему запросу ничего не найдено.</p>
     </section>
-    <section class="request-error">
+    <section class="request-error root__hide">
       <h2 class="request-error__title">Во время запроса произошла ошибка</h2>
       <p class="request-error__text">Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.</p>
     </section>
-    <section class="news">
+    <section class="news root__hide">
         <div class="news__container">
           <h2 class="news__title">Результаты поиска</h2>
           <a class="news__analytics" href="./analytics.html">Посмотреть аналитику &#8250;</a>

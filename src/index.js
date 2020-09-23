@@ -35,9 +35,9 @@ function handleSearchFormElements(boolean) {
 }
 
   function openRequestError() {
-    preloader.classList.remove("preloader_is-opened");
+    preloader.classList.add("root__hide");
     handleSearchFormElements(false);
-    requestError.classList.add("request-error_is-opened");
+    requestError.classList.remove("root__hide");
   }
 
   function renderNewsCards(arr) {
@@ -56,7 +56,7 @@ function handleSearchFormElements(boolean) {
   }
 
   function openNewsBlock() {
-    newsBlock.classList.add("news_is-opened");
+    newsBlock.classList.remove("root__hide");
   }
 
   function handleShowMoreButton(item) {
@@ -69,14 +69,14 @@ function handleSearchFormElements(boolean) {
     if (document.forms.search.checkValidity()) {
       if (!(newsCardList.container.children.length === 0)) {
         dataStorage.clear();
-        newsBlock.classList.remove("news_is-opened");
+        newsBlock.classList.add("root__hide");
         showMoreButton.openButton();
         newsCardList.removeCards();
       }
 
-      notFound.classList.remove("not-found_is-opened");
-      requestError.classList.remove("request-error_is-opened");
-      preloader.classList.add("preloader_is-opened");
+      notFound.classList.add("root__hide");
+      requestError.classList.add("root__hide");
+      preloader.classList.remove("root__hide");
       handleSearchFormElements(true);
       newsApi
         .getNews(input.value)
@@ -84,7 +84,7 @@ function handleSearchFormElements(boolean) {
           dataStorage.setItem("news", result.articles);
           dataStorage.setItem("input", input.value);
           dataStorage.setItem("totalResults", result.totalResults);
-          preloader.classList.remove("preloader_is-opened");
+          preloader.classList.add("root__hide");
           handleSearchFormElements(false);
           if (!(result.articles.length === 0)) {
             const articles = dataStorage.getItem("news");
@@ -96,7 +96,7 @@ function handleSearchFormElements(boolean) {
             openNewsBlock();
             newsApi.getNewsInTitles(input.value);
           } else {
-            notFound.classList.add("not-found_is-opened");
+            notFound.classList.remove("root__hide");
           }
         })
         .catch((err) => {
