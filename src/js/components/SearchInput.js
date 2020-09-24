@@ -19,9 +19,6 @@ export class SearchInput {
   }
 
   setSumbitListener() {
-    this.form.addEventListener("submit", () => {
-      event.preventDefault();
-      this.callback();
-    });
+    this.form.addEventListener("submit", () => this.callback());
   }
 }

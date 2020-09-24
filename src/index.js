@@ -9,22 +9,23 @@ import { CardList } from "./js/components/CardList.js";
 import { NewsApi } from "./js/modules/NewsApi.js";
 import { DataStorage } from "./js/modules/DataStorage.js";
 import { ShowMoreButton } from "./js/components/ShowMoreButton.js";
+import { Block } from "./js/components/Block.js";
 
 (function () {
   const input = document.querySelector(".search__input");
   const searchButton = document.querySelector(".search__button");
-  const preloader = document.querySelector(".preloader");
-  const requestError = document.querySelector(".request-error");
-  const newsBlock = document.querySelector(".news");
-  const notFound = document.querySelector(".not-found");
   let newsCounter = NEWS_START_QUANTITY;
 
+  const preloader = new Block (document.querySelector(".preloader"), "root__hide");
+  const requestError = new Block (document.querySelector(".request-error"), "root__hide");
+  const newsBlock = new Block (document.querySelector(".news"), "root__hide");
+  const notFound = new Block (document.querySelector(".not-found"), "root__hide");
   const searchForm = new SearchInput(document.forms.search, searchFormSubmit);
   const newsApi = new NewsApi(SEARCH_URL, API_KEY, openRequestError, saveNewsInTitles);
   const newsCardList = new CardList(document.querySelector(".news__list"));
   const dataStorage = new DataStorage();
   const showMoreButton = new ShowMoreButton(
-    newsBlock.querySelector(".news__show-more"),
+    document.querySelector(".news__show-more"),
     showMoreButtonClick,
     "news__show-more_is-closed"
   );
@@ -35,9 +36,9 @@ function handleSearchFormElements(boolean) {
 }
 
   function openRequestError() {
-    preloader.classList.add("root__hide");
+    preloader.hide();
     handleSearchFormElements(false);
-    requestError.classList.remove("root__hide");
+    requestError.open();
   }
 
   function renderNewsCards(arr) {
@@ -56,7 +57,11 @@ function handleSearchFormElements(boolean) {
   }
 
   function openNewsBlock() {
-    newsBlock.classList.remove("root__hide");
+    newsBlock.open();
+  }
+
+  function saveNewsInTitles(item) {
+    dataStorage.setItem("newsInTitles", item);
   }
 
   function handleShowMoreButton(item) {
@@ -66,17 +71,17 @@ function handleSearchFormElements(boolean) {
   }
 
   function searchFormSubmit() {
+    event.preventDefault();
     if (document.forms.search.checkValidity()) {
       if (!(newsCardList.container.children.length === 0)) {
         dataStorage.clear();
-        newsBlock.classList.add("root__hide");
+        newsBlock.hide();
         showMoreButton.openButton();
         newsCardList.removeCards();
       }
-
-      notFound.classList.add("root__hide");
-      requestError.classList.add("root__hide");
-      preloader.classList.remove("root__hide");
+      notFound.hide();
+      requestError.hide();
+      preloader.open();
       handleSearchFormElements(true);
       newsApi
         .getNews(input.value)
@@ -84,7 +89,7 @@ function handleSearchFormElements(boolean) {
           dataStorage.setItem("news", result.articles);
           dataStorage.setItem("input", input.value);
           dataStorage.setItem("totalResults", result.totalResults);
-          preloader.classList.add("root__hide");
+          preloader.hide();
           handleSearchFormElements(false);
           if (!(result.articles.length === 0)) {
             const articles = dataStorage.getItem("news");
@@ -96,7 +101,7 @@ function handleSearchFormElements(boolean) {
             openNewsBlock();
             newsApi.getNewsInTitles(input.value);
           } else {
-            notFound.classList.remove("root__hide");
+            notFound.open();
           }
         })
         .catch((err) => {
@@ -163,12 +168,8 @@ function handleSearchFormElements(boolean) {
       handleShowMoreButton(articles.length);
     }
   }
+
   renderLastSearchResults();
-
-  function saveNewsInTitles(item) {
-    dataStorage.setItem("newsInTitles", item);
-  }
-
   searchForm.setValidateListener();
   searchForm.setSumbitListener();
   showMoreButton.setClickListener();
