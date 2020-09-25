@@ -1,28 +1,27 @@
 export class GithubApi {
-    constructor(url, callback) {
-        this.url = url;
-        this.callback = callback;
-      }
+  constructor(url, renderCallback, swiperCallback, errorCallback) {
+    this.url = url;
+    this.renderCallback = renderCallback;
+    this.swiperCallback = swiperCallback;
+    this.errorCallback = errorCallback;
+  }
 
-    openRequestError() {
-        const requestError = document.querySelector(".request-error");
-        requestError.classList.remove("root__hide");
-      }
-
-    getCommits() {
-      return fetch(this.url).then((res) => {
+  getCommits() {
+    return fetch(this.url)
+      .then((res) => {
         if (!res.ok) {
-          this.openRequestError();
+          this.errorCallback();
           return Promise.reject(`Ошибка: ${res.status}`);
         }
         return res.json();
       })
       .then((result) => {
-        this.callback(result);
-    })
-    .catch((err) => {
-      console.log(err)
-      this.openRequestError();
-    });
+        this.renderCallback(result);
+        this.swiperCallback();
+      })
+      .catch((err) => {
+        console.log(err);
+        this.errorCallback();
+      });
+  }
 }
-    }

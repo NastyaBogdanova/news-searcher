@@ -21,6 +21,6 @@ export class DataStorage {
   }
 
   checkLocalStorage() {
-      return localStorage.newsList;
+    return localStorage.newsList;
   }
 }

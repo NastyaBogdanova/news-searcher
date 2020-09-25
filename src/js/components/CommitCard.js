@@ -10,7 +10,7 @@ export class CommitCard {
     
       _createMarkup() {
         const markup = `
-        <li class="history__slide glide__slide">
+        <div class="history__slide swiper-slide">
         <div class="history__commit">
           <p class="history__commit-date"></p>
           <div class="history__author-profile">
@@ -22,7 +22,7 @@ export class CommitCard {
           </div>
           <p class="history__commit-text"></p>
         </div>
-      </li>
+      </div>
           `;
     
         const element = document.createElement("div");

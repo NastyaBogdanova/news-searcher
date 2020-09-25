@@ -4,16 +4,11 @@
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 280px;
+    max-width: 240px;
 }
 
 @media screen and (max-width: 1024px) {
     .history__author-mail {
-        width: 230px;
-    }
-}
-@media screen and (max-width: 414px) {
-    .history__author-mail {
-        max-width: 190px;
+        width: 190px;
     }
 }

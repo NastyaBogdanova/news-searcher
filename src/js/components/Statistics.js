@@ -13,8 +13,8 @@ export class Statistics {
   }
 
   _getWeekDay(date) {
-    const days = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
-    return days[date.getDay()];
+    const weekDays = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+    return weekDays[date.getDay()];
   }
 
   _filterDates(date) {

@@ -1,9 +1,6 @@
 .history__slide {
     flex-shrink: 0;
     white-space: normal;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: transparent; 
     margin: 0;
     overflow: hidden;
 }
