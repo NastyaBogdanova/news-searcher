@@ -1,6 +1,6 @@
 import { changeTodayDate } from "../utils/utils.js";
 
-const API_URL = NODE_ENV === "production" ? "https://nomoreparties.co/news" : "https://newsapi.org";
+const API_URL = process.env.NODE_ENV === "production" ? "https://nomoreparties.co/news" : "https://newsapi.org";
 const PAGES_QUANTITY = 100;
 const COMMIT_PAGES_QUANTITY = 20;
 const NEWS_START_QUANTITY = 3;
