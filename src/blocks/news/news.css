@@ -10,6 +10,9 @@
 @import url(./__name/news__name.css);
 @import url(./__text/news__text.css);
 @import url(./__source/news__source.css);
+@import url(./__link/news__link.css);
+@import url(./__element-gradient/news__element-gradient.css);
+@import url(./__show-more/_is-closed/news__show-more_is-closed.css);
 
 .news {
     background: #F5F6F7;

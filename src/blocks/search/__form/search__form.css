@@ -8,6 +8,7 @@
     padding-right: 0;
     display: flex;
     margin: 0;
+    position: relative;
 }
 @media screen and (max-width: 768px) {
     .search__form {

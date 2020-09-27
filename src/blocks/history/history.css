@@ -20,12 +20,11 @@
 @import url(./__arrow/_left/history__arrow_left.css);
 @import url(./__arrow/_right/history__arrow_right.css);
 @import url(./__bullets/history__bullets.css);
-@import url(./__bullet/history__bullet.css);
-@import url(./__bullet/_active/history__bullet_active.css);
 
 .history {
     background: #F5F6F7;
     padding: 80px 0 148px;
+    overflow: hidden;
 }
 @media screen and (max-width: 768px) {
     .history {

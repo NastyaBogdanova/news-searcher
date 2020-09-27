@@ -10,7 +10,7 @@
   <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
-<body>
+<body class="root">
   <div class="background">
     <header class="header">
         <img class="header__logo" src="<%=require('../../images/NewsAnalyzer.svg')%>" alt="NewsAnalyzer logo">
@@ -23,83 +23,34 @@
         <div class="search__container">
           <h1 class="search__title">Что в мире творится?</h1>
           <p class="search__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-          <form class="search__form">
-            <input class="search__input" type="text" name="name" required placeholder="Введите тему новости">
+          <form class="search__form" name="search" novalidate>
+            <input class="search__input" type="text" name="name" required placeholder="Введите тему новости" autocomplete="off">
             <button class="search__button">Искать</button>
+            <p class="search__form-error"></p>
           </form>
         </div>
       </section>
   </div>
   <main class="main">
-    <section class="preloader">
+    <section class="preloader root__hide">
         <i class="preloader__elem"></i>
         <p class="preloader__text">Идет поиск новостей...</p>
     </section>
-    <section class="not-found">
+    <section class="not-found root__hide">
       <img class="not-found__image" src="<%=require('../../images/not-found.svg')%>" alt="Ничего не найдено">
       <h2 class="not-found__title">Ничего не найдено</h2>
       <p class="not-found__text">К сожалению, по вашему запросу ничего не найдено.</p>
     </section>
-    <section class="news">
+    <section class="request-error root__hide">
+      <h2 class="request-error__title">Во время запроса произошла ошибка</h2>
+      <p class="request-error__text">Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.</p>
+    </section>
+    <section class="news root__hide">
         <div class="news__container">
           <h2 class="news__title">Результаты поиска</h2>
           <a class="news__analytics" href="./analytics.html">Посмотреть аналитику &#8250;</a>
         </div>
       <div class="news__list">
-        <a class="news__element" href="">
-          <div class="news__element-container">
-            <img class="news__image" src="<%=require('../../images/image1.jpg')%>" alt="Картинка новости">
-            <p class="news__date">2 августа, 2019</p>
-            <h3 class="news__name">Национальное достояние – парки</h3>
-            <p class="news__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь...</p>
-          </div>
-          <p class="news__source">Лента.ру</p>
-        </a>
-        <a class="news__element" href="">
-          <div class="news__element-container">
-            <img class="news__image" src="<%=require('../../images/image2.jpg')%>" alt="Картинка новости">
-            <p class="news__date">2 августа, 2019</p>
-            <h3 class="news__name">История одной фотографии</h3>
-            <p class="news__text">Фотограф отвлеклась от освещения суровой политической реальности...</p>
-          </div>
-          <p class="news__source">Медуза</p>
-        </a>
-        <a class="news__element" href="">
-          <div class="news__element-container">
-            <img class="news__image" src="<%=require('../../images/image3.jpg')%>" alt="Картинка новости">
-            <p class="news__date">2 августа, 2019</p>
-            <h3 class="news__name">«Первозданная тайга»</h3>
-            <p class="news__text">Знаменитый фотограф снимает первозданные леса России, чтобы...</p>  
-          </div>
-          <p class="news__source">РИА</p>
-        </a>
-        <a class="news__element" href="">
-          <div class="news__element-container">
-            <img class="news__image" src="<%=require('../../images/image4.jpg')%>" alt="Картинка новости">
-            <p class="news__date">2 августа, 2019</p>
-            <h3 class="news__name">«Первозданная тайга»</h3>
-            <p class="news__text">Знаменитый фотограф снимает первозданные леса России, чтобы...</p>  
-          </div>
-           <p class="news__source">Дзен</p>
-        </a>
-        <a class="news__element" href="">
-          <div class="news__element-container">
-            <img class="news__image" src="<%=require('../../images/image5.jpg')%>" alt="Картинка новости">
-            <p class="news__date">2 августа, 2019</p>
-            <h3 class="news__name">Национальное достояние – парки</h3>
-            <p class="news__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь...</p>  
-          </div>
-          <p class="news__source">Афиша</p>
-        </a>
-        <a class="news__element" href="">
-          <div class="news__element-container">
-            <img class="news__image" src="<%=require('../../images/image6.jpg')%>" alt="Картинка новости">
-            <p class="news__date">2 августа, 2019</p>
-            <h3 class="news__name">Национальное достояние – парки</h3>
-            <p class="news__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь...</p>  
-          </div>
-           <p class="news__source">Медиазона</p>
-        </a>
       </div>
       <button class="news__show-more">Показать ещё</button>
     </section>

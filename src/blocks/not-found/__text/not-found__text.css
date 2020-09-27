@@ -3,5 +3,6 @@
     line-height: 24px;
     color: #B6BCBF;
     max-width: 356px;
-    text-align: center;
+    display: block;
+    margin: auto;
 }

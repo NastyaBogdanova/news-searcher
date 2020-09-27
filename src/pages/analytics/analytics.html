@@ -10,9 +10,9 @@
   <link rel="icon" href="<%=require('../../images/favicon.ico')%>" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
-<body>
+<body class="root">
   <header class="header header_theme_white">
-    <img class="header__logo" src="<%=require('../../images/NewsAnalyzer-black.svg')%>" alt="NewsAnalyzer logo">
+    <a class="header__logo-link" href="./index.html"><img class="header__logo" src="<%=require('../../images/NewsAnalyzer-black.svg')%>" alt="NewsAnalyzer logo"></a>
     <div class="header__links">
       <a class="header__link header__link_theme_white" href="./index.html">Главная</a>
       <a class="header__link header__link_theme_white" href="./about.html">О проекте</a>
@@ -24,9 +24,9 @@
         <li class="info__breadcrumb-item"><a class="info__breadcrumb-link" href="./index.html">Главная </a></li>
         <li class="info__breadcrumb-item active">Аналитика</li>
       </ul>  
-      <h2 class="info__title">Вы спросили: "<span class="info__news-name">Путешествия</span>"</h2>
-      <p class="info__text">Новостей за неделю: <span class="info__news-week">115</span></p>
-      <p class="info__text">Упоминаний в заголовках: <span class="info__news-titles">130</span></p>
+      <h2 class="info__title">Вы спросили: "<span class="info__news-name"></span>"</h2>
+      <p class="info__text">Новостей за неделю: <span class="info__news-week"></span></p>
+      <p class="info__text">Упоминаний в заголовках: <span class="info__news-titles"></span></p>
     </section>
     <section class="diagram">
       <h3 class="diagram__title">Аналитика по дням</h3>
@@ -39,13 +39,13 @@
       </div>
       <div class="diagram__container">
           <div class="diagram__dates">
-            <p class="diagram__date">19, пн</p>
-            <p class="diagram__date">20, вт</p>
-            <p class="diagram__date">21, ср</p>
-            <p class="diagram__date">22, чт</p>
-            <p class="diagram__date">23, пт</p>
-            <p class="diagram__date">24, сб</p>
-            <p class="diagram__date">25, вс</p>
+            <p class="diagram__date"></p>
+            <p class="diagram__date"></p>
+            <p class="diagram__date"></p>
+            <p class="diagram__date"></p>
+            <p class="diagram__date"></p>
+            <p class="diagram__date"></p>
+            <p class="diagram__date"></p>
           </div>
           <div class="diagram__numbers">
             <div class="diagram__percents-scale">

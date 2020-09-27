@@ -1,0 +1,7 @@
+@import url(../root/__hide/root__hide.css);
+
+.root {
+    font-family: Roboto, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}

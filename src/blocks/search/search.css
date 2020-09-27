@@ -4,6 +4,8 @@
 @import url(./__input/search__input.css);
 @import url(./__button/search__button.css);
 @import url(./__form/search__form.css);
+@import url(./__form-error/search__form-error.css);
+@import url(./__form-error/_is-opened/search__form-error_is-opened.css);
 
 .search {
     display: flex;

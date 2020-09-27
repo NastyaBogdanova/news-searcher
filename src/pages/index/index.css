@@ -1,5 +1,6 @@
 @import url(../../vendor/fonts.css);
 @import url(../../vendor/normalize.css);
+@import url(../../blocks/root/root.css);
 @import url(../../blocks/background/background.css);
 @import url(../../blocks/header/header.css);
 @import url(../../blocks/search/search.css);
@@ -9,6 +10,7 @@
 @import url(../../blocks/author/author.css);
 @import url(../../blocks/footer/footer.css);
 @import url(../../blocks/main/main.css);
+@import url(../../blocks/request-error/request-error.css);
 
 body {
     font-family: Roboto, Helvetica, sans-serif;

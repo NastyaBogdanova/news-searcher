@@ -1,11 +1,6 @@
 .history__bullets {
     position: absolute;
-    z-index: 2;
     bottom: -48px;
-    left: 50%;
-    display: inline-flex;
-    list-style: none;
-    transform: translateX(-50%); 
 }
 @media screen and (max-width: 768px) {
     .history__bullets {

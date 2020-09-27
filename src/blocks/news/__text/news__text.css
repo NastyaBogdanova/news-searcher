@@ -3,6 +3,11 @@
     font-size: 15px;
     line-height: 22px;
     margin: 0 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+    word-wrap: break-word;
 }
 @media screen and (max-width: 1024px) {
     .news__text {

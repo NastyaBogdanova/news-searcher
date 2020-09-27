@@ -4,7 +4,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 450px) {
     .background {
         min-height: 536px;
     }
