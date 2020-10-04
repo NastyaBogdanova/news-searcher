@@ -7,3 +7,8 @@
         margin-right: 40px;
     }
 }
+@media screen and (max-width: 650px) {
+    .author__text-container {
+        margin-right: 0;
+    }
+}
