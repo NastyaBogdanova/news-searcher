@@ -32,4 +32,4 @@ ES6, Babel, OOP, CSS3, HTML5, Webpack, BEM
 - Разместить production-билд на github pages - `npm run deploy`
 
 ## Ссылка на github pages:
-https://nastyabogdanova.github.io/newssercher/
+https://nastyabogdanova.github.io/news-searcher/
